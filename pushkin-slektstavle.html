@@ -1232,7 +1232,7 @@ body.bw-theme ::selection {
         <div class="pushkin-modal-img-wrap" id="pushkin-modal-img"></div>
         <div class="pushkin-modal-body">
           <h2 id="pushkin-modal-title"></h2>
-          <p class="pushkin-modal-bio" id="pushkin-modal-bio"></p>
+          <div class="pushkin-modal-bio" id="pushkin-modal-bio"></div>
           <ul class="pushkin-modal-links" id="pushkin-modal-links"></ul>
         </div>
       </div>
@@ -1243,7 +1243,7 @@ body.bw-theme ::selection {
 (function () {
   'use strict';
 
-  /** @type {Record<string, { title?: string, bio: string, image?: string|null, links: { href: string, label: string }[] }>} */
+  /** @type {Record<string, { title?: string, bio?: string, bioHtml?: string, image?: string|null, links: { href: string, label: string }[] }>} */
   var pushkinPersons = {
     'barbara-grabow': {
       bio:
@@ -1274,10 +1274,10 @@ body.bw-theme ::selection {
       ]
     },
     'christina-regina-sioberg': {
-      bio:
-        'Datter av Matthias Johann von Sjöberg og Christina Elisabeth d\'Albedyll, født i Riga i 1705. Hun giftet seg med Abram Petrovitsj Hannibal – Peter den stores afrikanske gudsønn og general – og ble slik bindeleddet mellom den skandinavisk-baltiske Siöberg-slekten og det russiske hoffet. Ekteskapet var Hannibals andre, etter at hans første tvangsekteskap ble annullert. Sammen fikk de elleve barn.\n\n' +
-        'Abram (ca. 1696–1781) ble født i Afrika, kidnappet som barn og sendt til tsar Peter; han ble fri mann, utdannet i Frankrike som militæringeniør og nådde generalrang i Russland. Pusjkin var stolt av den afrikanske arven og portretterte ham i den ufullendte romanen Peters den stores morian.',
-      image: null,
+      bioHtml:
+        'Datter av Matthias Johann von Sjöberg og Christina Elisabeth d\'Albedyll, født i Riga i 1705. Hun giftet seg med <button type="button" class="pushkin-name-btn pushkin-open-modal" data-person-key="abram-petrovitsj-hannibal" data-person-label="Abram Petrovitsj Hannibal (ca 1696–1781)">Abram Petrovitsj Hannibal</button> – Peter den stores afrikanske gudsønn og general – og ble slik bindeleddet mellom den skandinavisk-baltiske Siöberg-slekten og det russiske hoffet. Ekteskapet var Hannibals andre, etter at hans første tvangsekteskap ble annullert. Sammen fikk de elleve barn.<br><br>' +
+        '<button type="button" class="pushkin-name-btn pushkin-open-modal" data-person-key="abram-petrovitsj-hannibal" data-person-label="Abram Petrovitsj Hannibal (ca 1696–1781)">Abram</button> (ca. 1696–1781) ble født i Afrika, kidnappet som barn og sendt til tsar Peter; han ble fri mann, utdannet i Frankrike som militæringeniør og nådde generalrang i Russland. Pusjkin var stolt av den afrikanske arven og portretterte ham i den ufullendte romanen Peters den stores morian.',
+      image: 'assets/christina-regina-sioberg-portrait.png',
       links: [{ href: 'https://en.wikipedia.org/wiki/Abram_Petrovich_Gannibal', label: 'Abram Petrovitsj Hannibal (Wikipedia)' }]
     },
     'abram-petrovitsj-hannibal': {
@@ -1304,7 +1304,7 @@ body.bw-theme ::selection {
     'osip-abramovitsj-hannibal': {
       bio:
         'Andre sønn av Abram Hannibal og Christina Regina Siöberg. Osip giftet seg med Maria Aleksejevna Pusjkina fra den gamle russiske adelsslekten Pusjkin – men ekteskapet var turbulent og paret levde til slutt adskilt. Deres datter Nadesjda ble Aleksander Pusjkins mor, og det er gjennom Osip at Hannibal-slektens blod flyter inn i den store dikterens årer.',
-      image: null,
+      image: 'assets/osip-abramovitsj-hannibal-portrait.png',
       links: [
         { href: 'https://en.wikipedia.org/wiki/Osip_Abramovich_Gannibal', label: 'Osip Hannibal (Wikipedia)' },
         { href: 'https://en.wikipedia.org/wiki/Abram_Petrovich_Gannibal', label: 'Abram Petrovitsj Hannibal (Wikipedia)' }
@@ -1313,7 +1313,7 @@ body.bw-theme ::selection {
     'nadesjda-osipovna-hannibal': {
       bio:
         'Datter av Osip Hannibal og mor til Aleksander Pusjkin. Hun arvet sin oldefar Abram Hannibals mørke hudfarge og krøllete hår, og ble av samtiden kalt «den vakre kreolen». Nadesjda giftet seg med Sergej Lvovitsj Pusjkin og fikk seks barn, fire av disse overlevde barndommen. Forholdet til sønnen Aleksander var kjølig – han søkte moderlig varme hos barnepiken Arina Rodionovna i stedet. Nadesjda døde i mai 1836, ni måneder før Pusjkins egen tragiske død i duell.',
-      image: null,
+      image: 'assets/nadesjda-osipovna-hannibal-portrait.png',
       links: [{ href: 'https://en.wikipedia.org/wiki/Nadezhda_Osipovna_Pushkina', label: 'Wikipedia (engelsk)' }]
     },
     'aleksander-sergejevitsj-pusjkin': {
@@ -1331,8 +1331,8 @@ body.bw-theme ::selection {
       links: [{ href: 'https://en.wikipedia.org/wiki/Natalia_Alexandrovna_Pushkina', label: 'Wikipedia (engelsk)' }]
     },
     'sophie-von-merenberg': {
-      bio:
-        'Eldste datter av Natalia Pusjkina og prins Nikolaus Wilhelm av Nassau – og dermed Pusjkins barnebarn. Sophie ble beskrevet som en av sin tids vakreste kvinner, og skal ha arvet bestemoren Natalja Gontsjarovas berømte skjønnhet. I 1891 giftet hun seg morganatisk med storfyrst Mikhail Mikhajlovitsj av Russland, barnebarn av tsar Nikolaj I, i et kjærlighetsekteskap som fikk Alexander III til å frata storfyrsten alle militære titler og forvise ham fra Russland. Paret bosatte seg i Frankrike og England. Gjennom ekteskapet ble Sophie grevinne de Torby, og de tre barna arvet tittelen. Splittelsen mellom Westminster-linjen og Milford Haven-linjen skjer med hennes to døtre: Zia og Nada.',
+      bioHtml:
+        'Eldste datter av Natalia Pusjkina og prins Nikolaus Wilhelm av Nassau – og dermed Pusjkins barnebarn. Sophie ble beskrevet som en av sin tids vakreste kvinner, og skal ha arvet bestemoren Natalja Gontsjarovas berømte skjønnhet. I 1891 giftet hun seg morganatisk med storfyrst Mikhail Mikhajlovitsj av Russland, barnebarn av tsar Nikolaj I, i et kjærlighetsekteskap som fikk Alexander III til å frata storfyrsten alle militære titler og forvise ham fra Russland. Paret bosatte seg i Frankrike og England. Gjennom ekteskapet ble Sophie grevinne de Torby, og de tre barna arvet tittelen. Splittelsen mellom Westminster-linjen og Milford Haven-linjen skjer med hennes to døtre: <button type="button" class="pushkin-name-btn pushkin-open-modal" data-person-key="zia-de-torby" data-person-label="Countess Anastasia «Zia» de Torby (1892–1977)">Zia</button> og <button type="button" class="pushkin-name-btn pushkin-open-modal" data-person-key="nada-de-torby" data-person-label="Countess Nadejda «Nada» de Torby (1896–1963)">Nada</button>.',
       image:
         'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Countess_Sophie_of_Merenberg%2C_Countess_de_Torby_%28LOC_ggbain.00604%29.jpg/500px-Countess_Sophie_of_Merenberg%2C_Countess_de_Torby_%28LOC_ggbain.00604%29.jpg',
       links: [{ href: 'https://en.wikipedia.org/wiki/Countess_Sophie_of_Merenberg', label: 'Wikipedia (engelsk)' }]
@@ -1345,8 +1345,8 @@ body.bw-theme ::selection {
       links: [{ href: 'https://en.wikipedia.org/wiki/Anastasia_de_Torby', label: 'Wikipedia (engelsk)' }]
     },
     'nada-de-torby': {
-      bio:
-        'Yngre søster av Zia, og den personen gjennom hvem Mountbatten-linjen skiller seg fra Westminster-linjen. Født i Cannes og oppvokst i eksil i England etter foreldrenes utvisning fra Russland. Nada giftet seg i 1916 med prins George of Battenberg (senere 2. marquess av Milford Haven) – en forbindelse som plasserte henne i kjernen av det britiske aristokratiet. Sammen med mannen bidro hun til å oppdra nevøen prins Philip i perioder på 1930-tallet. Nada var kjent for sin uavhengige og dristige personlighet, og hun reiste ofte på ville eventyr med sin svigerinne Edwina Mountbatten. Under den berømte Gloria Vanderbilt-saken i 1934 ble hun anklaget for en lesbisk affære med Gloria Morgan Vanderbilt – noe hun alltid benektet offentlig, men som hennes barnebarn bekreftet i 2022. Hun døde i Cannes i 1963.',
+      bioHtml:
+        'Yngre søster av <button type="button" class="pushkin-name-btn pushkin-open-modal" data-person-key="zia-de-torby" data-person-label="Countess Anastasia «Zia» de Torby (1892–1977)">Zia</button>, og den personen gjennom hvem Mountbatten-linjen skiller seg fra Westminster-linjen. Født i Cannes og oppvokst i eksil i England etter foreldrenes utvisning fra Russland. Nada giftet seg i 1916 med <button type="button" class="pushkin-name-btn pushkin-open-modal" data-person-key="george-mountbatten-2" data-person-label="George Mountbatten, 2. Marquess of Milford Haven (1892–1938)">prins George of Battenberg (senere 2. marquess av Milford Haven)</button> – en forbindelse som plasserte henne i kjernen av det britiske aristokratiet. Sammen med mannen bidro hun til å oppdra nevøen prins Philip i perioder på 1930-tallet. Nada var kjent for sin uavhengige og dristige personlighet, og hun reiste ofte på ville eventyr med sin svigerinne Edwina Mountbatten. Under den berømte Gloria Vanderbilt-saken i 1934 ble hun anklaget for en lesbisk affære med Gloria Morgan Vanderbilt – noe hun alltid benektet offentlig, men som hennes barnebarn bekreftet i 2022. Hun døde i Cannes i 1963.',
       image:
         'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Nadejda_Mountbatten%2C_Marchioness_of_Milford_Haven_%28LOC_ggbain.16855%29.jpg/500px-Nadejda_Mountbatten%2C_Marchioness_of_Milford_Haven_%28LOC_ggbain.16855%29.jpg',
       links: [
@@ -1357,8 +1357,8 @@ body.bw-theme ::selection {
       ]
     },
     'gina-wernher': {
-      bio:
-        'Datter av Zia og Harold Wernher, og barndomsvenninne av dronning Elizabeth II og prins Philip – et vennskap hun arvet direkte fra sin mor. Gina giftet seg med oberst Harold Phillips og fikk fem barn, blant dem Natalia (den yngste) og Alexandra, som ble hertuginne av Abercorn. Familien var dypt forankret i britisk kongelig og aristokratisk liv, med Luton Hoo som familiesete. Ginas søster Nada var gift med 2. marquess av Milford Haven, onkel til prins Philip. Det var Ginas entusiastiske bifallelse som ifølge familietradisjonen bidro til at Natalias møte med Gerald Grosvenor ble til noe: «Slipp ham ikke!»',
+      bioHtml:
+        'Datter av Zia og Harold Wernher, og barndomsvenninne av dronning Elizabeth II og prins Philip – et vennskap hun arvet direkte fra sin mor. Gina giftet seg med oberst Harold Phillips og fikk fem barn, blant dem Natalia (den yngste) og Alexandra, som ble hertuginne av Abercorn. Familien var dypt forankret i britisk kongelig og aristokratisk liv, med Luton Hoo som familiesete. Ginas søster <button type="button" class="pushkin-name-btn pushkin-open-modal" data-person-key="nada-de-torby" data-person-label="Countess Nadejda «Nada» de Torby (1896–1963)">Nada</button> var gift med 2. marquess av Milford Haven, onkel til prins Philip. Det var Ginas entusiastiske bifallelse som ifølge familietradisjonen bidro til at Natalias møte med Gerald Grosvenor ble til noe: «Slipp ham ikke!»',
       image: 'assets/gina-wernher-wedding.png',
       links: [
         {
@@ -1368,8 +1368,8 @@ body.bw-theme ::selection {
       ]
     },
     'david-mountbatten-3': {
-      bio:
-        'Sønn av George (2. marquess av Milford Haven) og Nada de Torby; arvet tittelen som 9-åring etter farens tidlige død i 1938. David giftet seg to ganger – først med Romaine Pierce (ingen barn), deretter med Janet Mercedes Bryce, med hvem han fikk sønnene George (4. marquess) og Ivar Mountbatten. Han døde i London i 1970, 51 år gammel. Som sin far delte han en tidlig bortgang, og etterlot seg en ung arving på kun ni år.',
+      bioHtml:
+        'Sønn av <button type="button" class="pushkin-name-btn pushkin-open-modal" data-person-key="george-mountbatten-2" data-person-label="George Mountbatten, 2. Marquess of Milford Haven (1892–1938)">George (2. marquess av Milford Haven)</button> og <button type="button" class="pushkin-name-btn pushkin-open-modal" data-person-key="nada-de-torby" data-person-label="Countess Nadejda «Nada» de Torby (1896–1963)">Nada de Torby</button>; arvet tittelen som 9-åring etter farens tidlige død i 1938. David giftet seg to ganger – først med Romaine Pierce (ingen barn), deretter med Janet Mercedes Bryce, med hvem han fikk sønnene George (4. marquess) og Ivar Mountbatten. Han døde i London i 1970, 51 år gammel. Som sin far delte han en tidlig bortgang, og etterlot seg en ung arving på kun ni år.',
       image: 'https://upload.wikimedia.org/wikipedia/commons/7/78/Marquess_of_Milford_Haven.jpg',
       links: [
         {
@@ -1682,7 +1682,11 @@ body.bw-theme ::selection {
       } else {
         imgEl.innerHTML = PLACEHOLDER_SVG;
       }
-      bioEl.textContent = data.bio;
+      if (data.bioHtml) {
+        bioEl.innerHTML = data.bioHtml;
+      } else {
+        bioEl.textContent = data.bio != null ? data.bio : '';
+      }
       linksEl.innerHTML = '';
       var links = data.links || [];
       linksEl.hidden = links.length === 0;
@@ -1707,17 +1711,21 @@ body.bw-theme ::selection {
       document.body.style.overflow = '';
     }
 
+    function onOpenModalFromClick(e) {
+      var btn = e.target.closest && e.target.closest('.pushkin-open-modal');
+      if (!btn) return;
+      var key = btn.getAttribute('data-person-key');
+      var label = btn.getAttribute('data-person-label') || '';
+      if (key) openModal(key, label);
+    }
+
     var mainEl = document.querySelector('.pushkin-main');
     if (mainEl) {
-      mainEl.addEventListener('click', function (e) {
-        var t = e.target;
-        if (!t || !t.closest) return;
-        var btn = t.closest('.pushkin-open-modal');
-        if (!btn) return;
-        var key = btn.getAttribute('data-person-key');
-        var label = btn.getAttribute('data-person-label') || '';
-        if (key) openModal(key, label);
-      });
+      mainEl.addEventListener('click', onOpenModalFromClick);
+    }
+    var modalCard = modal.querySelector('.pushkin-modal-card');
+    if (modalCard) {
+      modalCard.addEventListener('click', onOpenModalFromClick);
     }
 
     closeBtn.addEventListener('click', closeModal);
