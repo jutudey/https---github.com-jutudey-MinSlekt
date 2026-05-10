@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pusjkin og vår slekt — slektstavle</title>
+  <style>
+/* =============================================================================
+   BioWeaver standalone theme
+   -----------------------------------------------------------------------------
+   Copy this file into another project and include it from any HTML page:
+
+     <link rel="stylesheet" href="/path/to/bioweaver-standalone.css">
+
+   Recommended page shell:
+
+     <body class="bw-theme">
+       <main class="bw-page bw-prose">
+         <h1 class="bw-chapter-title" data-initial="K">Kobenhavn 1903</h1>
+         <p>First paragraph...</p>
+       </main>
+     </body>
+
+   The theme is intentionally opt-in. It applies the paper background to
+   body.bw-theme and the book typography/layout inside .bw-page/.bw-prose.
+   Existing BioWeaver component names are supported as aliases:
+   .letter-transcript, .letter-header, .letter-signature, .infobox.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Italianno&display=swap');
+
+:root {
+  --bw-page-bg: #faf6ee;
+  --bw-ink: #1a1612;
+  --bw-ink-muted: #5a5048;
+  --bw-rule: #d8cdb8;
+  --bw-letter-bg: #f0e6d2;
+  --bw-letter-edge: #d9c9a6;
+  --bw-infobox-border: #b8a986;
+  --bw-accent: #6b1f2a;
+  --bw-accent-soft: #b89099;
+
+  --bw-font-body: 'EB Garamond', Garamond, 'Adobe Garamond Pro', Georgia, serif;
+  --bw-font-display: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  --bw-font-script: 'Italianno', 'Apple Chancery', cursive;
+  --bw-font-mono: 'Courier Prime', 'Courier New', Courier, monospace;
+
+  --bw-measure: 60ch;
+  --bw-leading: 1.65;
+  --bw-body-size: 1.0625rem;
+}
+
+/* Page base ---------------------------------------------------------------- */
+
+body.bw-theme {
+  margin: 0;
+  padding: 4rem 1.5rem;
+  background: var(--bw-page-bg);
+  color: var(--bw-ink);
+  font-family: var(--bw-font-body);
+  font-size: var(--bw-body-size);
+  line-height: var(--bw-leading);
+  font-feature-settings: "onum" 1, "kern" 1, "liga" 1;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.bw-page {
+  max-width: var(--bw-measure);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bw-wide {
+  max-width: calc(var(--bw-measure) + 4rem);
+}
+
+@media (max-width: 640px) {
+  body.bw-theme {
+    padding: 1.5rem 1.1rem 3rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 380px) {
+  body.bw-theme {
+    padding: 1.2rem 0.9rem 2.4rem;
+  }
+}
+
+/* Prose -------------------------------------------------------------------- */
+
+.bw-prose {
+  color: var(--bw-ink);
+}
+
+.bw-prose h1,
+.bw-prose h2,
+.bw-prose h3,
+.bw-prose h4,
+.bw-prose h5,
+.bw-prose h6 {
+  color: var(--bw-ink);
+  font-family: var(--bw-font-display);
+  font-weight: 500;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.bw-prose h1,
+.bw-chapter-title {
+  position: relative;
+  isolation: isolate;
+  margin: 0 0 2.2rem;
+  padding-top: 0.4rem;
+  font-family: var(--bw-font-display);
+  font-size: 2.6rem;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  color: var(--bw-ink);
+}
+
+.bw-prose h2 {
+  margin: 2.4em 0 0.8em;
+  font-size: 1.55rem;
+  font-style: italic;
+}
+
+.bw-prose h3 {
+  margin: 2em 0 0.6em;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.06em;
+}
+
+.bw-prose h4 {
+  margin: 1.6em 0 0.4em;
+  font-family: var(--bw-font-body);
+  font-size: 1.05rem;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.bw-prose p {
+  margin: 0;
+  text-align: justify;
+  text-wrap: pretty;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+.bw-prose p + p {
+  text-indent: 1.4em;
+}
+
+.bw-prose a {
+  color: var(--bw-accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.bw-prose strong,
+.bw-prose b {
+  font-weight: 600;
+}
+
+.bw-prose blockquote {
+  margin: 1.6em 1.2em;
+  padding-left: 1.2em;
+  border-left: 1px solid var(--bw-rule);
+  color: var(--bw-ink-muted);
+  font-style: italic;
+}
+
+.bw-prose hr {
+  margin: 2.4em 0;
+  border: none;
+  color: var(--bw-accent);
+  text-align: center;
+}
+
+.bw-prose hr::before {
+  content: "⁂";
+  font-size: 1.1rem;
+  letter-spacing: 0.4em;
+}
+
+/* Chapter opener: ghost initial and drop cap ------------------------------- */
+
+.bw-chapter-title[data-initial]::before,
+.bw-prose h1[data-initial]::before {
+  content: attr(data-initial);
+  position: absolute;
+  z-index: -1;
+  left: -0.18em;
+  top: -0.55em;
+  font-family: var(--bw-font-display);
+  font-size: 9em;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--bw-accent);
+  opacity: 0.12;
+  pointer-events: none;
+  user-select: none;
+}
+
+.bw-chapter-title + p,
+.bw-prose h1 + p {
+  text-indent: 0;
+}
+
+.bw-dropcap::first-letter,
+.bw-chapter-title + p::first-letter,
+.bw-prose h1 + p::first-letter {
+  float: left;
+  padding: 0.08em 0.1em 0 0;
+  margin-right: 0.06em;
+  color: var(--bw-accent);
+  font-family: var(--bw-font-display);
+  font-size: 4.2em;
+  font-weight: 600;
+  line-height: 0.85;
+}
+
+@supports (initial-letter: 3) {
+  .bw-dropcap::first-letter,
+  .bw-chapter-title + p::first-letter,
+  .bw-prose h1 + p::first-letter {
+    -webkit-initial-letter: 3;
+    initial-letter: 3;
+    float: none;
+    padding: 0;
+    margin-right: 0.1em;
+    font-size: inherit;
+  }
+}
+
+@media (max-width: 640px) {
+  .bw-prose h1,
+  .bw-chapter-title {
+    margin-bottom: 1.4rem;
+    font-size: 2rem;
+  }
+
+  .bw-prose h2 {
+    margin-top: 1.8em;
+    font-size: 1.3rem;
+  }
+
+  .bw-prose h3 {
+    font-size: 1.05rem;
+  }
+
+  .bw-chapter-title[data-initial]::before,
+  .bw-prose h1[data-initial]::before {
+    left: -0.1em;
+    top: -0.4em;
+    font-size: 6em;
+  }
+
+  .bw-dropcap::first-letter,
+  .bw-chapter-title + p::first-letter,
+  .bw-prose h1 + p::first-letter {
+    font-size: 3.4em;
+  }
+}
+
+@media (max-width: 380px) {
+  .bw-prose h1,
+  .bw-chapter-title {
+    font-size: 1.75rem;
+  }
+
+  .bw-chapter-title[data-initial]::before,
+  .bw-prose h1[data-initial]::before {
+    font-size: 5em;
+  }
+}
+
+/* Letter transcript -------------------------------------------------------- */
+
+.bw-letter,
+.bw-page .letter-transcript {
+  margin: 2.2em 0;
+  padding: 2em 2.2em 1.8em;
+  border: 1px solid var(--bw-letter-edge);
+  border-radius: 2px;
+  background: var(--bw-letter-bg);
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(180, 140, 80, 0.08), transparent 60%),
+    radial-gradient(ellipse at 80% 100%, rgba(140, 100, 50, 0.07), transparent 55%),
+    linear-gradient(var(--bw-letter-bg), var(--bw-letter-bg));
+  box-shadow:
+    0 1px 0 rgba(120, 90, 50, 0.08),
+    0 6px 14px -8px rgba(80, 50, 20, 0.18),
+    0 18px 30px -22px rgba(60, 35, 10, 0.18);
+  color: var(--bw-ink);
+  font-family: var(--bw-font-body);
+  font-size: 0.98em;
+  font-style: italic;
+  line-height: 1.55;
+}
+
+.bw-letter p,
+.bw-page .letter-transcript p {
+  margin: 0;
+  text-align: left;
+  hyphens: manual;
+}
+
+.bw-letter p + p,
+.bw-page .letter-transcript p + p {
+  margin-top: 0.2em;
+  text-indent: 1.4em;
+}
+
+.bw-letter em,
+.bw-letter i,
+.bw-page .letter-transcript em,
+.bw-page .letter-transcript i {
+  font-style: normal;
+}
+
+.bw-letter-header,
+.bw-page .letter-header {
+  margin: 0 0 1.4em;
+  color: var(--bw-ink-muted);
+  font-size: 0.95em;
+  font-style: normal;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.06em;
+  text-align: right;
+}
+
+.bw-letter-header p,
+.bw-page .letter-header p {
+  margin: 0;
+  text-align: right;
+  text-indent: 0;
+}
+
+.bw-letter-signature,
+.bw-page .letter-signature {
+  margin: 1.4em 0 0;
+  color: var(--bw-ink);
+  font-family: var(--bw-font-script);
+  font-size: 2.2em;
+  font-style: normal;
+  line-height: 1.1;
+  text-align: right;
+}
+
+.bw-letter-signature p,
+.bw-page .letter-signature p {
+  margin: 0;
+  text-align: right;
+  text-indent: 0;
+}
+
+.bw-letter-signature p + p,
+.bw-page .letter-signature p + p {
+  margin-top: 0.6em;
+  color: var(--bw-ink-muted);
+  font-family: var(--bw-font-body);
+  font-size: 0.45em;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .bw-letter,
+  .bw-page .letter-transcript {
+    margin-left: -0.4rem;
+    margin-right: -0.4rem;
+    padding: 1.4em 1.2em 1.2em;
+  }
+
+  .bw-letter-signature,
+  .bw-page .letter-signature {
+    font-size: 1.7em;
+  }
+}
+
+@media (max-width: 380px) {
+  .bw-letter,
+  .bw-page .letter-transcript {
+    padding: 1.2em 1em 1em;
+  }
+}
+
+/* Infobox ------------------------------------------------------------------ */
+
+.bw-infobox,
+.bw-page .infobox {
+  margin: 2.2em 0;
+  padding: 1.5em 1.7em 1.3em;
+  border: 1px solid var(--bw-infobox-border);
+  color: var(--bw-ink);
+  font-family: var(--bw-font-body);
+  font-size: 0.94em;
+  line-height: 1.55;
+}
+
+.bw-infobox > p:first-child,
+.bw-page .infobox > p:first-child {
+  margin: 0 0 1em;
+  padding-bottom: 0.7em;
+  border-bottom: 1px solid var(--bw-infobox-border);
+  color: var(--bw-accent);
+  font-family: var(--bw-font-display);
+  font-size: 1.1em;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-align: center;
+  text-indent: 0;
+}
+
+.bw-infobox > p:first-child strong,
+.bw-page .infobox > p:first-child strong {
+  font-weight: inherit;
+}
+
+.bw-infobox p,
+.bw-page .infobox p {
+  text-align: left;
+  hyphens: auto;
+}
+
+.bw-infobox p + p,
+.bw-page .infobox p + p {
+  text-indent: 1.2em;
+}
+
+.bw-infobox em,
+.bw-infobox i,
+.bw-page .infobox em,
+.bw-page .infobox i {
+  color: var(--bw-ink-muted);
+}
+
+@media (max-width: 640px) {
+  .bw-infobox,
+  .bw-page .infobox {
+    margin-left: -0.4rem;
+    margin-right: -0.4rem;
+    padding: 1.2em 1.1em 1em;
+  }
+}
+
+@media (max-width: 380px) {
+  .bw-infobox,
+  .bw-page .infobox {
+    padding: 1em 0.95em 0.9em;
+  }
+}
+
+/* Figures, lists, tables, footnotes, code --------------------------------- */
+
+.bw-prose figure {
+  margin: 2.4em 0;
+  text-align: center;
+}
+
+.bw-prose figure img,
+.bw-prose p > img {
+  max-width: 100%;
+  height: auto;
+}
+
+.bw-prose figure img {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid var(--bw-rule);
+  background: #fff;
+}
+
+.bw-prose figcaption {
+  margin-top: 0.8em;
+  color: var(--bw-ink-muted);
+  font-family: var(--bw-font-body);
+  font-size: 0.88em;
+  font-style: italic;
+  line-height: 1.45;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.bw-prose ul,
+.bw-prose ol {
+  margin: 1em 0;
+  padding-left: 1.6em;
+}
+
+.bw-prose li {
+  margin: 0.2em 0;
+}
+
+.bw-prose li > p {
+  text-indent: 0;
+}
+
+.bw-prose table {
+  margin: 1.6em auto;
+  border-collapse: collapse;
+  font-size: 0.95em;
+}
+
+.bw-prose th,
+.bw-prose td {
+  padding: 0.4em 0.8em;
+  border-bottom: 1px solid var(--bw-rule);
+  text-align: left;
+  vertical-align: top;
+}
+
+.bw-prose th {
+  border-bottom-color: var(--bw-ink-muted);
+  font-variant-caps: small-caps;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.bw-prose .footnotes,
+.bw-prose section.footnotes {
+  margin-top: 3em;
+  padding-top: 1em;
+  border-top: 1px solid var(--bw-rule);
+  color: var(--bw-ink-muted);
+  font-size: 0.86em;
+}
+
+.bw-prose .footnotes p {
+  text-align: left;
+}
+
+.bw-prose code,
+.bw-prose pre,
+.bw-prose kbd,
+.bw-prose samp {
+  font-family: var(--bw-font-mono);
+  font-size: 0.92em;
+}
+
+.bw-prose pre {
+  overflow-x: auto;
+  padding: 0.9em 1.1em;
+  border-left: 2px solid var(--bw-accent-soft);
+  background: #f3ecdc;
+}
+
+/* Optional multi-page navigation ------------------------------------------ */
+
+.bw-nav-toggle {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.bw-nav-button {
+  position: fixed;
+  z-index: 100;
+  top: 1.4rem;
+  right: 1.4rem;
+  display: flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  border: 1px solid rgba(216, 205, 184, 0.6);
+  border-radius: 4px;
+  background: rgba(250, 246, 238, 0.85);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.bw-nav-button:hover {
+  background: rgba(250, 246, 238, 1);
+}
+
+.bw-nav-button span {
+  display: block;
+  width: 16px;
+  height: 1.5px;
+  background: var(--bw-ink);
+  transition: transform 0.25s ease, opacity 0.2s;
+}
+
+.bw-nav-toggle:checked ~ .bw-nav-button span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.bw-nav-toggle:checked ~ .bw-nav-button span:nth-child(2) {
+  opacity: 0;
+}
+
+.bw-nav-toggle:checked ~ .bw-nav-button span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+.bw-nav-toggle:focus-visible ~ .bw-nav-button {
+  outline: 2px solid var(--bw-accent);
+  outline-offset: 2px;
+}
+
+.bw-chapter-menu {
+  position: fixed;
+  z-index: 99;
+  top: 4rem;
+  right: 1.4rem;
+  width: 18rem;
+  max-width: calc(100vw - 2.8rem);
+  max-height: calc(100vh - 6rem);
+  overflow-y: auto;
+  padding: 1.4rem 1.6rem;
+  border: 1px solid var(--bw-rule);
+  background: var(--bw-page-bg);
+  box-shadow:
+    0 8px 24px -10px rgba(40, 30, 18, 0.18),
+    0 24px 60px -30px rgba(40, 30, 18, 0.22);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px) scale(0.98);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.bw-nav-toggle:checked ~ .bw-chapter-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.bw-chapter-menu::before {
+  content: attr(aria-label);
+  display: block;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--bw-rule);
+  color: var(--bw-ink-muted);
+  font-family: var(--bw-font-display);
+  font-size: 0.85rem;
+  font-style: italic;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.bw-chapter-menu ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bw-chapter-menu li {
+  margin: 0;
+  padding: 0;
+}
+
+.bw-chapter-menu a {
+  display: flex;
+  gap: 0.7rem;
+  align-items: baseline;
+  padding: 0.4rem 0;
+  color: var(--bw-ink);
+  font-family: var(--bw-font-body);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.bw-chapter-menu a:hover,
+.bw-chapter-menu li.current > a {
+  color: var(--bw-accent);
+}
+
+.bw-chapter-menu li.current > a {
+  font-weight: 600;
+}
+
+.bw-pager {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem;
+  margin: 4rem auto 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--bw-rule);
+}
+
+.bw-pager a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.4rem 0;
+  color: var(--bw-ink);
+  text-decoration: none;
+}
+
+.bw-pager .bw-prev {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.bw-pager .bw-next {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.bw-pager .bw-dir {
+  color: var(--bw-ink-muted);
+  font-family: var(--bw-font-display);
+  font-size: 0.82rem;
+  font-style: italic;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.15s, transform 0.2s;
+}
+
+.bw-pager .bw-title {
+  color: var(--bw-ink);
+  font-family: var(--bw-font-display);
+  font-size: 1.1rem;
+  line-height: 1.25;
+}
+
+.bw-pager a:hover .bw-dir,
+.bw-pager a:hover .bw-title {
+  color: var(--bw-accent);
+}
+
+.bw-pager .bw-prev:hover .bw-dir {
+  transform: translateX(-3px);
+}
+
+.bw-pager .bw-next:hover .bw-dir {
+  transform: translateX(3px);
+}
+
+@media (max-width: 640px) {
+  .bw-nav-button {
+    top: 0.8rem;
+    right: 0.8rem;
+  }
+
+  .bw-chapter-menu {
+    top: 3.4rem;
+    right: 0.8rem;
+    left: 0.8rem;
+    width: auto;
+    max-width: none;
+  }
+
+  .bw-pager {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .bw-pager .bw-prev,
+  .bw-pager .bw-next {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+/* Browser niceties --------------------------------------------------------- */
+
+body.bw-theme ::selection {
+  background: rgba(107, 31, 42, 0.18);
+  color: var(--bw-ink);
+}
+
+@media print {
+  body.bw-theme {
+    padding: 0;
+    background: white;
+  }
+
+  .bw-letter,
+  .bw-page .letter-transcript {
+    box-shadow: none;
+  }
+
+  .bw-nav-toggle,
+  .bw-nav-button,
+  .bw-chapter-menu,
+  .bw-pager {
+    display: none !important;
+  }
+}
+
+/* ---------- Pushkin page extensions ---------- */
+.pushkin-main {
+  max-width: 72rem;
+  --bw-measure: 72rem;
+}
+
+/* Intro: smal venstrekolonne, infoboks til høyre */
+.pushkin-intro-row {
+  display: grid;
+  grid-template-columns: minmax(0, 44ch) minmax(14rem, 1fr);
+  gap: 1.5rem 2.25rem;
+  align-items: start;
+  margin: 0 0 1.75rem;
+}
+.pushkin-intro-text {
+  max-width: 44ch;
+}
+.pushkin-intro-text > p {
+  text-indent: 0;
+}
+.pushkin-intro-text > p + p {
+  text-indent: 1.4em;
+}
+.pushkin-intro-row .bw-infobox {
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .pushkin-intro-row {
+    grid-template-columns: 1fr;
+  }
+  .pushkin-intro-row .bw-infobox {
+    margin-top: 0.25rem;
+  }
+}
+
+.pushkin-selectors {
+  margin: 2rem 0 1.5rem;
+  padding: 1.25rem 1.4rem;
+  border: 1px solid var(--bw-infobox-border);
+  background: rgba(240, 230, 210, 0.35);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem 2rem;
+  align-items: flex-end;
+}
+.pushkin-selectors label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-family: var(--bw-font-display);
+  font-size: 0.9rem;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.05em;
+  color: var(--bw-ink-muted);
+}
+.pushkin-select {
+  min-width: 14rem;
+  padding: 0.45rem 0.65rem;
+  font-family: var(--bw-font-body);
+  font-size: 1rem;
+  color: var(--bw-ink);
+  background: var(--bw-page-bg);
+  border: 1px solid var(--bw-rule);
+  border-radius: 2px;
+}
+.pushkin-select:focus {
+  outline: 2px solid var(--bw-accent);
+  outline-offset: 2px;
+}
+
+.pushkin-table-wrap {
+  margin: 1.75rem 0 2.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--bw-rule);
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.35);
+}
+.pushkin-table {
+  width: 100%;
+  min-width: 52rem;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+.pushkin-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--bw-page-bg);
+  border-bottom: 2px solid var(--bw-accent-soft);
+  padding: 0.55rem 0.65rem;
+  text-align: left;
+  font-family: var(--bw-font-display);
+  font-variant-caps: small-caps;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--bw-accent);
+}
+.pushkin-table td {
+  padding: 0.5rem 0.65rem;
+  border-bottom: 1px solid var(--bw-rule);
+  vertical-align: top;
+  text-align: left;
+}
+.pushkin-table tbody tr:hover td {
+  background: rgba(107, 31, 42, 0.04);
+}
+.pushkin-table .col-gen {
+  width: 2.5rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--bw-ink-muted);
+}
+@media (max-width: 767px) {
+  .pushkin-table .col-gen {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: var(--bw-page-bg);
+    box-shadow: 2px 0 6px -2px rgba(0,0,0,0.08);
+  }
+  .pushkin-table thead .col-gen {
+    z-index: 3;
+  }
+}
+.pushkin-table .col-slektskap {
+  font-style: italic;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.04em;
+  color: var(--bw-ink-muted);
+  white-space: nowrap;
+}
+.pushkin-name-btn {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: var(--bw-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  cursor: pointer;
+  text-align: left;
+}
+.pushkin-name-btn:hover {
+  color: var(--bw-ink);
+}
+.pushkin-name-btn:focus-visible {
+  outline: 2px solid var(--bw-accent);
+  outline-offset: 2px;
+}
+.pushkin-name-sep {
+  color: var(--bw-ink-muted);
+  font-weight: 400;
+}
+
+.pushkin-modal-root[hidden] { display: none; }
+.pushkin-modal-root {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(26, 22, 18, 0.45);
+}
+.pushkin-modal-card {
+  position: relative;
+  max-width: 36rem;
+  width: 100%;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  padding: 1.75rem 1.85rem 1.5rem;
+  border: 1px solid var(--bw-letter-edge);
+  border-radius: 2px;
+  background: var(--bw-letter-bg);
+  box-shadow:
+    0 8px 28px -12px rgba(40, 30, 18, 0.35),
+    0 24px 50px -24px rgba(40, 30, 18, 0.25);
+  font-family: var(--bw-font-body);
+}
+.pushkin-modal-close {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--bw-rule);
+  border-radius: 2px;
+  background: var(--bw-page-bg);
+  color: var(--bw-ink);
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.pushkin-modal-close:hover {
+  border-color: var(--bw-accent);
+  color: var(--bw-accent);
+}
+.pushkin-modal-card h2 {
+  margin: 0 2.5rem 1rem 0;
+  font-family: var(--bw-font-display);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--bw-ink);
+}
+.pushkin-modal-img-wrap {
+  margin: 0 0 1rem;
+  text-align: center;
+}
+.pushkin-modal-img-wrap img,
+.pushkin-modal-img-wrap svg {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--bw-rule);
+  background: #fff;
+}
+.pushkin-modal-bio {
+  margin: 0 0 1rem;
+  text-align: left;
+  text-indent: 0;
+  line-height: 1.55;
+}
+.pushkin-modal-links {
+  margin: 0;
+  padding-left: 1.2em;
+  text-align: left;
+}
+.pushkin-modal-links li { margin: 0.35em 0; }
+.pushkin-modal-links a { color: var(--bw-accent); }
+
+@media print {
+  .pushkin-selectors,
+  .pushkin-name-btn { pointer-events: none; }
+  .pushkin-modal-root { display: none !important; }
+}
+  </style>
+</head>
+<body class="bw-theme">
+  <main class="bw-page bw-prose pushkin-main">
+    <h1 class="bw-chapter-title" data-initial="P">Pusjkin og vår slekt</h1>
+    <div class="pushkin-intro-row">
+      <div class="pushkin-intro-text">
+        <p class="bw-dropcap">
+          Denne siden viser slektskapet mellom vår familielinje fra <strong>Barbara Jochumsdatter Grabow (1631–1695)</strong>
+          og to linjer ned fra <strong>Aleksander Pusjkin</strong> — én mot Westminster (Grosvenor) og én mot Mountbatten (Milford Haven).
+          Pusjkin-linjene er like fra slektsledd 0–8; ved slektsledd 9 skiller de seg mellom søstrene Zia og Nada de Torby.
+        </p>
+      </div>
+      <aside class="bw-infobox">
+        <p><strong>Slik bruker du siden</strong></p>
+        <p>Velg først hvilken gren av <em>Johan Fredrik Meyer (1914–1987)</em> du tilhører, deretter hvilket av barna i den grenen.
+        Tabellen fylles ut i kolonnen «Vår linje» for slektsledd 9–11. Navn i de to Pusjkin-kolonnene kan klikkes for mer informasjon (innhold fylles på etter hvert).</p>
+      </aside>
+    </div>
+
+    <div class="pushkin-selectors" role="region" aria-label="Valg av familiegren">
+      <label for="branch-select">
+        Gren av Johan Fredrik Meyer
+        <select id="branch-select" class="pushkin-select" autocomplete="off">
+          <option value="">— Velg gren —</option>
+          <option value="anna">Anna (1948–)</option>
+          <option value="eivind">Eivind (1941–)</option>
+          <option value="johanFredrik">Johan Fredrik (1944–)</option>
+        </select>
+      </label>
+      <label for="person-select">
+        Barn / neste ledd
+        <select id="person-select" class="pushkin-select" autocomplete="off" disabled>
+          <option value="">— Velg person —</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="pushkin-table-wrap">
+      <table class="pushkin-table" id="slekt-table" aria-describedby="branch-select">
+        <thead>
+          <tr>
+            <th class="col-gen" scope="col">Gen</th>
+            <th scope="col">Vår linje</th>
+            <th class="col-slektskap" scope="col">Slektskap</th>
+            <th scope="col">Westminster-linjen</th>
+            <th scope="col">Mountbatten-linjen</th>
+          </tr>
+        </thead>
+        <tbody id="slekt-tbody"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <div id="pushkin-modal" class="pushkin-modal-root" hidden role="dialog" aria-modal="true" aria-labelledby="pushkin-modal-title">
+    <div class="pushkin-modal-card" role="document">
+      <button type="button" class="pushkin-modal-close" id="pushkin-modal-close" aria-label="Lukk">&times;</button>
+      <h2 id="pushkin-modal-title"></h2>
+      <div class="pushkin-modal-img-wrap" id="pushkin-modal-img"></div>
+      <p class="pushkin-modal-bio" id="pushkin-modal-bio"></p>
+      <ul class="pushkin-modal-links" id="pushkin-modal-links"></ul>
+    </div>
+  </div>
+
+  <script>
+(function () {
+  'use strict';
+
+  /** @type {Record<string, { title?: string, bio: string, image?: string|null, links: { href: string, label: string }[] }>} */
+  var pushkinPersons = {
+    'barbara-grabow': {
+      bio: 'Barbara Jochumsdatter Grabow (1631–1695) er felles ane for linjene som vises i tabellen. Mer informasjon og bilder kan legges inn her senere.',
+      links: []
+    },
+    'clara-maria-galtung-torsnes': {
+      bio: 'Clara Maria Galtung Torsnes — søsken med Johan Galtung Torsnes i vår linje. Biografi og kilder kommer.',
+      links: []
+    },
+    'mattias-johan-sioberg': {
+      bio: 'Mattias Johan Siöberg. Biografi og kilder kommer.',
+      links: []
+    },
+    'christina-regina-sioberg': {
+      bio: 'Christina Regina Siöberg (f. ca. 1705). Biografi og kilder kommer.',
+      links: []
+    },
+    'osip-abramovitsj-hannibal': {
+      bio: 'Osip Abramovitsj Hannibal — i Pusjkin-linjen. Biografi og kilder kommer.',
+      links: []
+    },
+    'nadesjda-osipovna-hannibal': {
+      bio: 'Nadesjda Osipovna Hannibal — mor til Aleksander Pusjkin. Biografi og kilder kommer.',
+      links: []
+    },
+    'aleksander-sergejevitsj-pusjkin': {
+      bio: 'Aleksander Sergejevitsj Pusjkin (1799–1837), russisk nasjonalpoet. Biografi, portrett og lenker kan utvides her.',
+      links: []
+    },
+    'natalia-pushkina': {
+      bio: 'Natalia Nikolajevna Pusjkin, senere grevinne av Merenberg (1836–1913). Biografi og kilder kommer.',
+      links: []
+    },
+    'sophie-von-merenberg': {
+      bio: 'Countess Sophie von Merenberg (1868–1927). Biografi og kilder kommer.',
+      links: []
+    },
+    'zia-de-torby': {
+      bio: 'Countess Anastasia «Zia» de Torby (1892–1977) — linje mot Westminster. Biografi og kilder kommer.',
+      links: []
+    },
+    'nada-de-torby': {
+      bio: 'Countess Nadejda «Nada» de Torby (1896–1963) — linje mot Mountbatten. Biografi og kilder kommer.',
+      links: []
+    },
+    'gina-wernher': {
+      bio: 'Georgina «Gina» Wernher (1919–2011). Biografi og kilder kommer.',
+      links: []
+    },
+    'david-mountbatten-3': {
+      bio: 'David Mountbatten, 3. Marquess of Milford Haven (1919–1970). Biografi og kilder kommer.',
+      links: []
+    },
+    'natalia-ayesha-phillips': {
+      bio: 'Natalia Ayesha Phillips (1959–). Biografi og kilder kommer.',
+      links: []
+    },
+    'george-mountbatten-4': {
+      bio: 'George Mountbatten, 4. Marquess of Milford Haven (1961–). Biografi og kilder kommer.',
+      links: []
+    },
+    'hugh-grosvenor-7': {
+      bio: 'Hugh Grosvenor, 7. hertug av Westminster (1991–). Biografi og kilder kommer.',
+      links: []
+    },
+    'lady-tatiana-mountbatten': {
+      bio: 'Lady Tatiana Mountbatten (1990–). Biografi og kilder kommer.',
+      links: []
+    },
+    'henry-mountbatten-medina': {
+      bio: 'Henry Mountbatten, Earl of Medina (1991–). Biografi og kilder kommer.',
+      links: []
+    },
+    'lady-cosima-grosvenor': {
+      bio: 'Lady Cosima Grosvenor (2025–). Biografi og kilder kommer.',
+      links: []
+    },
+    'elodie-dru': {
+      bio: 'Elodie Dru (2023–). Biografi og kilder kommer.',
+      links: []
+    },
+    'auberon-dru': {
+      bio: 'Auberon «Albie» Dru (2025–). Biografi og kilder kommer.',
+      links: []
+    }
+  };
+
+  var PLACEHOLDER_SVG =
+    '<svg xmlns="http://www.w3.org/2000/svg" width="280" height="200" viewBox="0 0 280 200" aria-hidden="true"><rect width="280" height="200" fill="#faf6ee"/><path fill="#d8cdb8" d="M140 108c22 0 40-18 40-40s-18-40-40-40-40 18-40 40 18 40 40 40zm0 12c-48 0-88 24-88 54v10h176v-10c0-30-40-54-88-54z"/></svg>';
+
+  var VAR_LINE_FIXED = [
+    'Barbara Jochumsdatter Grabow (1631–1695)',
+    'Johan Galtung Torsnes (1660–1720)',
+    'Lars Galtung Torsnes (1696–1771)',
+    'Johan Daniel Galtung (1722–1772)',
+    'Lars Galtung (1757–)',
+    'Johan Daniel Larsen Galtung (1790–1886)',
+    'Jens Christoffer Galtung (1836–1926)',
+    'Jacobine Fredrikke Galtung (1878–1923)',
+    'Johan Fredrik Meyer (1914–1987)'
+  ];
+
+  var SLEKTSKAP = [
+    'Felles ane',
+    'Søsken',
+    'Søskenbarn',
+    'Tremenning',
+    'Firmenning',
+    'Femmenning',
+    'Seksmenning',
+    'Syvmenning',
+    'Åttemenning',
+    'Nimenning',
+    'Timenning',
+    'Ellvemenning',
+    'Tolvmenning',
+    'Trettenmenning'
+  ];
+
+  /** Each row: [westminster parts, mountbatten parts] — each part { key, label } */
+  var PUSHKIN_PARTS = [
+    [
+      [{ key: 'barbara-grabow', label: 'Barbara Jochumsdatter Grabow (1631–1695)' }],
+      [{ key: 'barbara-grabow', label: 'Barbara Jochumsdatter Grabow (1631–1695)' }]
+    ],
+    [
+      [{ key: 'clara-maria-galtung-torsnes', label: 'Clara Maria Galtung Torsnes' }],
+      [{ key: 'clara-maria-galtung-torsnes', label: 'Clara Maria Galtung Torsnes' }]
+    ],
+    [
+      [{ key: 'mattias-johan-sioberg', label: 'Mattias Johan Siöberg' }],
+      [{ key: 'mattias-johan-sioberg', label: 'Mattias Johan Siöberg' }]
+    ],
+    [
+      [{ key: 'christina-regina-sioberg', label: 'Christina Regina Siöberg (1705–)' }],
+      [{ key: 'christina-regina-sioberg', label: 'Christina Regina Siöberg (1705–)' }]
+    ],
+    [
+      [{ key: 'osip-abramovitsj-hannibal', label: 'Osip Abramovitsj Hannibal' }],
+      [{ key: 'osip-abramovitsj-hannibal', label: 'Osip Abramovitsj Hannibal' }]
+    ],
+    [
+      [{ key: 'nadesjda-osipovna-hannibal', label: 'Nadesjda Osipovna Hannibal' }],
+      [{ key: 'nadesjda-osipovna-hannibal', label: 'Nadesjda Osipovna Hannibal' }]
+    ],
+    [
+      [{ key: 'aleksander-sergejevitsj-pusjkin', label: 'Aleksander Sergejevitsj Pusjkin (1799–1837)' }],
+      [{ key: 'aleksander-sergejevitsj-pusjkin', label: 'Aleksander Sergejevitsj Pusjkin (1799–1837)' }]
+    ],
+    [
+      [{ key: 'natalia-pushkina', label: 'Natalia Pushkina (1836–1913)' }],
+      [{ key: 'natalia-pushkina', label: 'Natalia Pushkina (1836–1913)' }]
+    ],
+    [
+      [{ key: 'sophie-von-merenberg', label: 'Countess Sophie von Merenberg (1868–1927)' }],
+      [{ key: 'sophie-von-merenberg', label: 'Countess Sophie von Merenberg (1868–1927)' }]
+    ],
+    [
+      [{ key: 'zia-de-torby', label: 'Countess Anastasia «Zia» de Torby (1892–1977)' }],
+      [{ key: 'nada-de-torby', label: 'Countess Nadejda «Nada» de Torby (1896–1963)' }]
+    ],
+    [
+      [{ key: 'gina-wernher', label: 'Georgina «Gina» Wernher (1919–2011)' }],
+      [{ key: 'david-mountbatten-3', label: 'David Mountbatten, 3. Marquess of Milford Haven (1919–1970)' }]
+    ],
+    [
+      [{ key: 'natalia-ayesha-phillips', label: 'Natalia Ayesha Phillips (1959–)' }],
+      [{ key: 'george-mountbatten-4', label: 'George Mountbatten, 4. Marquess of Milford Haven (1961–)' }]
+    ],
+    [
+      [{ key: 'hugh-grosvenor-7', label: 'Hugh Grosvenor, 7. hertug av Westminster (1991–)' }],
+      [
+        { key: 'lady-tatiana-mountbatten', label: 'Lady Tatiana Mountbatten (1990–)' },
+        { key: 'henry-mountbatten-medina', label: 'Henry Mountbatten, Earl of Medina (1991–)' }
+      ]
+    ],
+    [
+      [{ key: 'lady-cosima-grosvenor', label: 'Lady Cosima Grosvenor (2025–)' }],
+      [
+        { key: 'elodie-dru', label: 'Elodie Dru (2023–)' },
+        { key: 'auberon-dru', label: 'Auberon «Albie» Dru (2025–)' }
+      ]
+    ]
+  ];
+
+  var BRANCHES = {
+    anna: {
+      gen9: 'Anna Erland Eriksen f. Meyer (1948–)',
+      persons: [
+        {
+          id: 'arne-johan',
+          label: 'Arne Johan Eriksen (1972–)',
+          gen11: 'Niklas Johan Eriksen (2007–) · Alexander Jonas Eriksen (2011–)'
+        },
+        {
+          id: 'anne-grete',
+          label: 'Anne Grete Meyer Eriksen (1974–)',
+          gen11: 'Sebastian Meyer Nilsson (2006–) · Eleonora Meyer Nilsson (2009–)'
+        }
+      ]
+    },
+    eivind: {
+      gen9: 'Eivind Erland Meyer (1941–)',
+      persons: [
+        { id: 'elisabeth', label: 'Elisabeth Meyer', gen11: 'Alexandra' },
+        { id: 'eivind-jr', label: 'Eivind jr', gen11: 'Nora Oliva · Anne Mathilde' }
+      ]
+    },
+    johanFredrik: {
+      gen9: 'Johan Fredrik Erland Meyer (1944–)',
+      persons: [
+        { id: 'astrid', label: 'Astrid', gen11: '—' },
+        { id: 'sigrid', label: 'Sigrid', gen11: 'Eivind · Vårin' }
+      ]
+    }
+  };
+
+  function partsCell(parts) {
+    var html = [];
+    for (var i = 0; i < parts.length; i++) {
+      if (i) html.push('<span class="pushkin-name-sep"> · </span>');
+      var p = parts[i];
+      html.push(
+        '<button type="button" class="pushkin-name-btn pushkin-open-modal" data-person-key="' +
+          escapeAttr(p.key) +
+          '" data-person-label="' +
+          escapeAttr(p.label) +
+          '">' +
+          escapeHtml(p.label) +
+          '</button>'
+      );
+    }
+    return html.join('');
+  }
+
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function escapeAttr(s) {
+    return escapeHtml(s).replace(/'/g, '&#39;');
+  }
+
+  function renderTable(varGen9, varGen10, varGen11) {
+    var tbody = document.getElementById('slekt-tbody');
+    tbody.innerHTML = '';
+    for (var g = 0; g < 14; g++) {
+      var tr = document.createElement('tr');
+      var tdGen = document.createElement('td');
+      tdGen.className = 'col-gen';
+      tdGen.textContent = String(g);
+      tr.appendChild(tdGen);
+
+      var tdVar = document.createElement('td');
+      if (g < 9) {
+        tdVar.textContent = VAR_LINE_FIXED[g];
+      } else if (g === 9) {
+        tdVar.textContent = varGen9 != null ? varGen9 : '—';
+      } else if (g === 10) {
+        tdVar.textContent = varGen10 != null ? varGen10 : '—';
+      } else if (g === 11) {
+        tdVar.textContent = varGen11 != null ? varGen11 : '—';
+      } else {
+        tdVar.textContent = '—';
+      }
+      tr.appendChild(tdVar);
+
+      var tdSk = document.createElement('td');
+      tdSk.className = 'col-slektskap';
+      tdSk.textContent = SLEKTSKAP[g];
+      tr.appendChild(tdSk);
+
+      var pair = PUSHKIN_PARTS[g];
+      var tdH = document.createElement('td');
+      tdH.innerHTML = partsCell(pair[0]);
+      tr.appendChild(tdH);
+
+      var tdM = document.createElement('td');
+      tdM.innerHTML = partsCell(pair[1]);
+      tr.appendChild(tdM);
+
+      tbody.appendChild(tr);
+    }
+  }
+
+  function wireModal() {
+    var modal = document.getElementById('pushkin-modal');
+    var titleEl = document.getElementById('pushkin-modal-title');
+    var imgEl = document.getElementById('pushkin-modal-img');
+    var bioEl = document.getElementById('pushkin-modal-bio');
+    var linksEl = document.getElementById('pushkin-modal-links');
+    var closeBtn = document.getElementById('pushkin-modal-close');
+
+    function openModal(key, label) {
+      var data = pushkinPersons[key] || {
+        bio: 'Ingen utfyllende tekst er lagt inn for denne personen ennå.',
+        links: []
+      };
+      titleEl.textContent = data.title || label;
+      if (data.image) {
+        imgEl.innerHTML = '<img src="' + escapeAttr(data.image) + '" alt="">';
+      } else {
+        imgEl.innerHTML = PLACEHOLDER_SVG;
+      }
+      bioEl.textContent = data.bio;
+      linksEl.innerHTML = '';
+      var links = data.links || [];
+      if (links.length === 0) {
+        var li = document.createElement('li');
+        li.textContent = '(Lenker kan legges til senere.)';
+        linksEl.appendChild(li);
+      } else {
+        for (var i = 0; i < links.length; i++) {
+          var item = links[i];
+          var li2 = document.createElement('li');
+          var a = document.createElement('a');
+          a.href = item.href;
+          a.target = '_blank';
+          a.rel = 'noopener noreferrer';
+          a.textContent = item.label;
+          li2.appendChild(a);
+          linksEl.appendChild(li2);
+        }
+      }
+      modal.hidden = false;
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    }
+
+    function closeModal() {
+      modal.hidden = true;
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('slekt-tbody').addEventListener('click', function (e) {
+      var t = e.target;
+      if (t && t.classList && t.classList.contains('pushkin-open-modal')) {
+        var key = t.getAttribute('data-person-key');
+        var label = t.getAttribute('data-person-label') || '';
+        if (key) openModal(key, label);
+      }
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !modal.hidden) closeModal();
+    });
+  }
+
+  function initSelectors() {
+    var branchSel = document.getElementById('branch-select');
+    var personSel = document.getElementById('person-select');
+
+    function fillPersonOptions() {
+      var branch = branchSel.value;
+      personSel.innerHTML = '';
+      var opt0 = document.createElement('option');
+      opt0.value = '';
+      opt0.textContent = '— Velg person —';
+      personSel.appendChild(opt0);
+      if (!branch || !BRANCHES[branch]) {
+        personSel.disabled = true;
+        return;
+      }
+      personSel.disabled = false;
+      var list = BRANCHES[branch].persons;
+      for (var i = 0; i < list.length; i++) {
+        var o = document.createElement('option');
+        o.value = list[i].id;
+        o.textContent = list[i].label;
+        personSel.appendChild(o);
+      }
+    }
+
+    function updateTable() {
+      var branch = branchSel.value;
+      var pid = personSel.value;
+      if (!branch || !pid || !BRANCHES[branch]) {
+        renderTable(null, null, null);
+        return;
+      }
+      var b = BRANCHES[branch];
+      var person = null;
+      for (var j = 0; j < b.persons.length; j++) {
+        if (b.persons[j].id === pid) {
+          person = b.persons[j];
+          break;
+        }
+      }
+      if (!person) {
+        renderTable(null, null, null);
+        return;
+      }
+      renderTable(b.gen9, person.label, person.gen11);
+    }
+
+    branchSel.addEventListener('change', function () {
+      fillPersonOptions();
+      updateTable();
+    });
+    personSel.addEventListener('change', updateTable);
+
+    fillPersonOptions();
+    renderTable(null, null, null);
+  }
+
+  wireModal();
+  initSelectors();
+})();
+  </script>
+</body>
+</html>
