@@ -799,16 +799,43 @@ body.bw-theme ::selection {
   --bw-measure: 72rem;
 }
 
-/* Intro: smal venstrekolonne, infoboks til høyre */
+/* Intro: tre kolonner (portrett · tekst · infoboks), stablet på mobil */
 .pushkin-intro-row {
   display: grid;
-  grid-template-columns: minmax(0, 44ch) minmax(14rem, 1fr);
-  gap: 1.5rem 2.25rem;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 1.5rem 1.85rem;
   align-items: start;
   margin: 0 0 1.75rem;
 }
+.pushkin-hero-portrait {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.pushkin-hero-portrait img {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 0 auto;
+  border: 1px solid var(--bw-rule);
+  background: #fff;
+  box-shadow:
+    0 1px 0 rgba(120, 90, 50, 0.06),
+    0 10px 28px -12px rgba(40, 30, 18, 0.22);
+}
+.pushkin-hero-portrait figcaption {
+  margin-top: 0.65rem;
+  padding: 0 0.25rem;
+  font-size: 0.86rem;
+  font-style: italic;
+  color: var(--bw-ink-muted);
+  line-height: 1.4;
+  font-family: var(--bw-font-body);
+  text-wrap: balance;
+}
 .pushkin-intro-text {
-  max-width: 44ch;
+  max-width: none;
 }
 .pushkin-intro-text > p {
   text-indent: 0;
@@ -818,13 +845,18 @@ body.bw-theme ::selection {
 }
 .pushkin-intro-row .bw-infobox {
   margin: 0;
+  max-width: none;
 }
 @media (max-width: 768px) {
   .pushkin-intro-row {
     grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+  .pushkin-hero-portrait img {
+    max-width: min(320px, 88vw);
   }
   .pushkin-intro-row .bw-infobox {
-    margin-top: 0.25rem;
+    margin-top: 0;
   }
 }
 
@@ -870,6 +902,16 @@ body.bw-theme ::selection {
   border: 1px solid var(--bw-rule);
   border-radius: 2px;
   background: rgba(255, 255, 255, 0.35);
+}
+.pushkin-table-caption {
+  caption-side: top;
+  padding: 0 0 0.75rem;
+  max-width: 52rem;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--bw-ink-muted);
+  text-align: left;
+  line-height: 1.45;
 }
 .pushkin-table {
   width: 100%;
@@ -1018,6 +1060,10 @@ body.bw-theme ::selection {
   text-align: left;
   text-indent: 0;
   line-height: 1.55;
+  white-space: pre-line;
+}
+.pushkin-table td.pushkin-merged {
+  text-align: center;
 }
 .pushkin-modal-links {
   margin: 0;
@@ -1038,17 +1084,28 @@ body.bw-theme ::selection {
   <main class="bw-page bw-prose pushkin-main">
     <h1 class="bw-chapter-title" data-initial="P">Pusjkin og vår slekt</h1>
     <div class="pushkin-intro-row">
+      <figure class="pushkin-hero-portrait">
+        <img
+          src="assets/500px-Orest_Kiprensky_-_Портрет_поэта_А.С.Пушкина_-_Google_Art_Project.jpg"
+          width="500"
+          height="579"
+          alt="Aleksander Sergejevitsj Pusjkin, oljeportrett av Orest Kiprensky (1827)"
+          loading="eager"
+          decoding="async"
+        >
+        <figcaption>Portrettmaleri av Pushkin fra 1827</figcaption>
+      </figure>
       <div class="pushkin-intro-text">
         <p class="bw-dropcap">
           Denne siden viser slektskapet mellom vår familielinje fra <strong>Barbara Jochumsdatter Grabow (1631–1695)</strong>
           og to linjer ned fra <strong>Aleksander Pusjkin</strong> — én mot Westminster (Grosvenor) og én mot Mountbatten (Milford Haven).
-          Pusjkin-linjene er like fra slektsledd 0–8; ved slektsledd 9 skiller de seg mellom søstrene Zia og Nada de Torby.
+          Pusjkin-linjene er like fra slektsledd 0–8 (Barbara til og med grevinne Sophie von Merenberg); fra slektsledd 9 skiller de seg mellom søstrene Zia og Nada de Torby.
         </p>
       </div>
       <aside class="bw-infobox">
         <p><strong>Slik bruker du siden</strong></p>
         <p>Velg først hvilken gren av <em>Johan Fredrik Meyer (1914–1987)</em> du tilhører, deretter hvilket av barna i den grenen.
-        Tabellen fylles ut i kolonnen «Vår linje» for slektsledd 9–11. Navn i de to Pusjkin-kolonnene kan klikkes for mer informasjon (innhold fylles på etter hvert).</p>
+        Tabellen fylles ut i kolonnen «Vår linje» for slektsledd 9–11. Navn i Pusjkin-kolonnene åpner minibiografier: tekst om Westminster-linjen og Mountbatten-linjen er hentet fra prosjektets notater, med portrett der Wikimedia tilbyr stabile lenker (upload.wikimedia.org).</p>
       </aside>
     </div>
 
@@ -1072,6 +1129,9 @@ body.bw-theme ::selection {
 
     <div class="pushkin-table-wrap">
       <table class="pushkin-table" id="slekt-table" aria-describedby="branch-select">
+        <caption class="pushkin-table-caption">
+          Der Westminster- og Mountbatten-kolonnene viser samme person, er de slått sammen til én celle. Fra slektsledd 9 (søstrene de Torby) vises linjene hver for seg.
+        </caption>
         <thead>
           <tr>
             <th class="col-gen" scope="col">Gen</th>
@@ -1103,87 +1163,153 @@ body.bw-theme ::selection {
   /** @type {Record<string, { title?: string, bio: string, image?: string|null, links: { href: string, label: string }[] }>} */
   var pushkinPersons = {
     'barbara-grabow': {
-      bio: 'Barbara Jochumsdatter Grabow (1631–1695) er felles ane for linjene som vises i tabellen. Mer informasjon og bilder kan legges inn her senere.',
+      bio:
+        'Barbara ble født i Danmark i 1631 som datter av den tyske adelsmannen Jochum Grabow og danske Maren Hansdatter Steensen. Slekten von Grabow tilhørte den tyske uradelen fra Brandenburg. Hun ble dobbelt foreldreløs i ung alder – faren døde da hun var tre, moren da hun var 14 – og bodde deretter hos ulike slektninger, til slutt hos farens fetter, admiral Kjøn Joachim Grabow. I 1650 giftet hun seg med den norske godseieren Lauritz Galtung Torsnes og bosatte seg på Vestlandet. Etter Lauritz\' død i 1661 satt hun igjen som 30-åring med seks barn, og levde til 1695.',
+      image: null,
       links: []
     },
     'clara-maria-galtung-torsnes': {
-      bio: 'Clara Maria Galtung Torsnes — søsken med Johan Galtung Torsnes i vår linje. Biografi og kilder kommer.',
+      bio:
+        'Eldste datter av Lauritz Galtung Torsnes og Barbara Grabow, og den personen gjennom hvem Westminster-linjen skiller seg fra AJs norske linje. Hun giftet seg med den svenske godseieren Gustaf Siöberg til Esarp og fikk fem barn. Kildematerialet om hennes eget liv er sparsomt, men hennes eldste sønn Mattias Johan ble et viktig bindeledd mellom Skandinavia og Russland.',
+      image: null,
       links: []
     },
     'mattias-johan-sioberg': {
-      bio: 'Mattias Johan Siöberg. Biografi og kilder kommer.',
+      bio:
+        'Eldste sønn av Clara Maria Galtung og Gustaf Siöberg. Han dro i 1699 til Polen og deretter til Riga i Latvia – som på den tid var under svensk styre – der han giftet seg med Christina Elisabeth d\'Albedyll fra en latvisk adelsfamilie. De fikk fire kjente barn, blant dem datteren Christina Regina, som skulle gifte seg med en av 1700-tallets mest usedvanlige skikkelser.',
+      image: null,
       links: []
     },
     'christina-regina-sioberg': {
-      bio: 'Christina Regina Siöberg (f. ca. 1705). Biografi og kilder kommer.',
-      links: []
+      bio:
+        'Datter av Mattias Johan Siöberg og Christina Elisabeth d\'Albedyll, født i Riga i 1705. Hun giftet seg med Abram Petrovitsj Hannibal – Peter den stores afrikanske gudsønn og general – og ble slik bindeleddet mellom den skandinavisk-baltiske Siöberg-slekten og det russiske hoffet. Ekteskapet var Hannibals andre, etter at hans første tvangsekteskap ble annullert. Sammen fikk de elleve barn.\n\n' +
+        'Abram (ca. 1696–1781) ble født i Afrika, kidnappet som barn og sendt til tsar Peter; han ble fri mann, utdannet i Frankrike som militæringeniør og nådde generalrang i Russland. Pusjkin var stolt av den afrikanske arven og portretterte ham i den ufullendte romanen Peters den stores morian.',
+      image: null,
+      links: [{ href: 'https://en.wikipedia.org/wiki/Abram_Petrovich_Gannibal', label: 'Abram Petrovitsj Hannibal (Wikipedia)' }]
     },
     'osip-abramovitsj-hannibal': {
-      bio: 'Osip Abramovitsj Hannibal — i Pusjkin-linjen. Biografi og kilder kommer.',
-      links: []
+      bio:
+        'Andre sønn av Abram Hannibal og Christina Regina Siöberg. Osip giftet seg med Maria Aleksejevna Pusjkina fra den gamle russiske adelsslekten Pusjkin – men ekteskapet var turbulent og paret levde til slutt adskilt. Deres datter Nadesjda ble Aleksander Pusjkins mor, og det er gjennom Osip at Hannibal-slektens blod flyter inn i den store dikterens årer.',
+      image: null,
+      links: [
+        { href: 'https://en.wikipedia.org/wiki/Osip_Abramovich_Gannibal', label: 'Osip Hannibal (Wikipedia)' },
+        { href: 'https://en.wikipedia.org/wiki/Abram_Petrovich_Gannibal', label: 'Abram Petrovitsj Hannibal (Wikipedia)' }
+      ]
     },
     'nadesjda-osipovna-hannibal': {
-      bio: 'Nadesjda Osipovna Hannibal — mor til Aleksander Pusjkin. Biografi og kilder kommer.',
-      links: []
+      bio:
+        'Datter av Osip Hannibal og mor til Aleksander Pusjkin. Hun arvet sin oldefar Abram Hannibals mørke hudfarge og krøllete hår, og ble av samtiden kalt «den vakre kreolen». Nadesjda giftet seg med Sergej Lvovitsj Pusjkin og fikk seks barn, fire av disse overlevde barndommen. Forholdet til sønnen Aleksander var kjølig – han søkte moderlig varme hos barnepiken Arina Rodionovna i stedet. Nadesjda døde i mai 1836, ni måneder før Pusjkins egen tragiske død i duell.',
+      image: null,
+      links: [{ href: 'https://en.wikipedia.org/wiki/Nadezhda_Osipovna_Pushkina', label: 'Wikipedia (engelsk)' }]
     },
     'aleksander-sergejevitsj-pusjkin': {
-      bio: 'Aleksander Sergejevitsj Pusjkin (1799–1837), russisk nasjonalpoet. Biografi, portrett og lenker kan utvides her.',
-      links: []
+      bio:
+        'Russisk poet, dramatiker og novellist, regnet som grunnleggeren av moderne russisk litteratur – Russlands svar på Shakespeare. Født i Moskva inn i lavere adel, publiserte han sitt første dikt som 15-åring og ble raskt anerkjent som en av Russlands fremste stemmer. Hans viktigste verk inkluderer verseromanen Evgenij Onegin (1825–32), dramaet Boris Godunov og novellen Spadekongen. Hans politiske diktning provoserte tsarregimet og førte til eksil og sensur. Han var notorisk impulsiv og skal ha utfordret til over 20 dueller. Den siste ble fatal: i januar 1837 ble han skutt i buken av den franske offiseren Georges d\'Anthès under en duell om konas ære. Han døde to dager senere av peritonitt, 37 år gammel.',
+      image:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Orest_Kiprensky_-_%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%BF%D0%BE%D1%8D%D1%82%D0%B0_%D0%90.%D0%A1.%D0%9F%D1%83%D1%88%D0%BA%D0%B8%D0%BD%D0%B0_-_Google_Art_Project.jpg/500px-Orest_Kiprensky_-_%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%BF%D0%BE%D1%8D%D1%82%D0%B0_%D0%90.%D0%A1.%D0%9F%D1%83%D1%88%D0%BA%D0%B8%D0%BD%D0%B0_-_Google_Art_Project.jpg',
+      links: [{ href: 'https://en.wikipedia.org/wiki/Alexander_Pushkin', label: 'Wikipedia (engelsk)' }]
     },
     'natalia-pushkina': {
-      bio: 'Natalia Nikolajevna Pusjkin, senere grevinne av Merenberg (1836–1913). Biografi og kilder kommer.',
-      links: []
+      bio:
+        'Pusjkins yngste datter, født åtte måneder før farens fatale duell. Hun vokste opp til å bli en beryktet skjønnhet i Sankt Petersburg og ble hoffdame hos tsarinnens hoff. Hennes første ekteskap med Mikhail Dubelt var ulykkelig, og hun tilbrakte år i Ungarn for å bryte det. Etter skilsmissen giftet hun seg morganatisk i London i 1868 med prins Nikolaus Wilhelm av Nassau – et ekteskap som var skandaløst ujevnt i rang. Som kompensasjon ble hun tildelt tittelen grevinne av Merenburg. Hun underviste sine barn i russisk og innredet en sal i det tyske palasset som museum for sin far. Hun døde i Wiesbaden i 1913.',
+      image:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/N.A._Pushkina_by_Ivan_Makarov_%281849%2C_National_Pushkin_museum%29.jpg/500px-N.A._Pushkina_by_Ivan_Makarov_%281849%2C_National_Pushkin_museum%29.jpg',
+      links: [{ href: 'https://en.wikipedia.org/wiki/Natalia_Alexandrovna_Pushkina', label: 'Wikipedia (engelsk)' }]
     },
     'sophie-von-merenberg': {
-      bio: 'Countess Sophie von Merenberg (1868–1927). Biografi og kilder kommer.',
-      links: []
+      bio:
+        'Eldste datter av Natalia Pusjkina og prins Nikolaus Wilhelm av Nassau – og dermed Pusjkins barnebarn. Sophie ble beskrevet som en av sin tids vakreste kvinner, og skal ha arvet bestemoren Natalja Gontsjarovas berømte skjønnhet. I 1891 giftet hun seg morganatisk med storfyrst Mikhail Mikhajlovitsj av Russland, barnebarn av tsar Nikolaj I, i et kjærlighetsekteskap som fikk Alexander III til å frata storfyrsten alle militære titler og forvise ham fra Russland. Paret bosatte seg i Frankrike og England. Gjennom ekteskapet ble Sophie grevinne de Torby, og de tre barna arvet tittelen. Splittelsen mellom Westminster-linjen og Milford Haven-linjen skjer med hennes to døtre: Zia og Nada.',
+      image:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Countess_Sophie_of_Merenberg%2C_Countess_de_Torby_%28LOC_ggbain.00604%29.jpg/500px-Countess_Sophie_of_Merenberg%2C_Countess_de_Torby_%28LOC_ggbain.00604%29.jpg',
+      links: [{ href: 'https://en.wikipedia.org/wiki/Countess_Sophie_of_Merenberg', label: 'Wikipedia (engelsk)' }]
     },
     'zia-de-torby': {
-      bio: 'Countess Anastasia «Zia» de Torby (1892–1977) — linje mot Westminster. Biografi og kilder kommer.',
-      links: []
+      bio:
+        'Eldste datter av Sophie von Merenberg og storfyrst Mikhail, oppvokst i eksil i Frankrike og England. I 1917 giftet hun seg med den rike industrialisten Sir Harold Wernher, sønn av diamantmagnaten Julius Wernher. Zia ble en fremtredende skikkelse i britisk overklasse og en nær venn av kongeparet George V og dronning Mary – som ofte feiret bryllupsanniversarium hos Wernherne på Luton Hoo. Hun var lidenskapelig opptatt av hester og ble Champion Owner i 1955 og 1966, og vant Epsom Derby i 1966 med hesten Charlottown. Hun var også nær venninne av dronning Elizabeth II og prins Philip livet ut.',
+      image:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/De_Torby_Anastasiya_Mikhailovna.jpg/500px-De_Torby_Anastasiya_Mikhailovna.jpg',
+      links: [{ href: 'https://en.wikipedia.org/wiki/Anastasia_de_Torby', label: 'Wikipedia (engelsk)' }]
     },
     'nada-de-torby': {
-      bio: 'Countess Nadejda «Nada» de Torby (1896–1963) — linje mot Mountbatten. Biografi og kilder kommer.',
-      links: []
+      bio:
+        'Yngre søster av Zia, og den personen gjennom hvem Mountbatten-linjen skiller seg fra Westminster-linjen. Født i Cannes og oppvokst i eksil i England etter foreldrenes utvisning fra Russland. Nada giftet seg i 1916 med prins George of Battenberg (senere 2. marquess av Milford Haven) – en forbindelse som plasserte henne i kjernen av det britiske aristokratiet. Sammen med mannen bidro hun til å oppdra nevøen prins Philip i perioder på 1930-tallet. Nada var kjent for sin uavhengige og dristige personlighet, og hun reiste ofte på ville eventyr med sin svigerinne Edwina Mountbatten. Under den berømte Gloria Vanderbilt-saken i 1934 ble hun anklaget for en lesbisk affære med Gloria Morgan Vanderbilt – noe hun alltid benektet offentlig, men som hennes barnebarn bekreftet i 2022. Hun døde i Cannes i 1963.',
+      image: null,
+      links: [
+        {
+          href: 'https://en.wikipedia.org/wiki/Nadejda_Mountbatten,_Marchioness_of_Milford_Haven',
+          label: 'Wikipedia (engelsk)'
+        }
+      ]
     },
     'gina-wernher': {
-      bio: 'Georgina «Gina» Wernher (1919–2011). Biografi og kilder kommer.',
+      bio:
+        'Datter av Zia og Harold Wernher, og barndomsvenninne av dronning Elizabeth II og prins Philip – et vennskap hun arvet direkte fra sin mor. Gina giftet seg med oberst Harold Phillips og fikk fem barn, blant dem Natalia (den yngste) og Alexandra, som ble hertuginne av Abercorn. Familien var dypt forankret i britisk kongelig og aristokratisk liv, med Luton Hoo som familiesete. Ginas søster Nada var gift med 2. marquess av Milford Haven, onkel til prins Philip. Det var Ginas entusiastiske bifallelse som ifølge familietradisjonen bidro til at Natalias møte med Gerald Grosvenor ble til noe: «Slipp ham ikke!»',
+      image: null,
       links: []
     },
     'david-mountbatten-3': {
-      bio: 'David Mountbatten, 3. Marquess of Milford Haven (1919–1970). Biografi og kilder kommer.',
-      links: []
+      bio:
+        'Sønn av George (2. marquess av Milford Haven) og Nada de Torby; arvet tittelen som 9-åring etter farens tidlige død i 1938. David giftet seg to ganger – først med Romaine Pierce (ingen barn), deretter med Janet Mercedes Bryce, med hvem han fikk sønnene George (4. marquess) og Ivar Mountbatten. Han døde i London i 1970, 51 år gammel. Som sin far delte han en tidlig bortgang, og etterlot seg en ung arving på kun ni år.',
+      image: null,
+      links: [
+        {
+          href: 'https://en.wikipedia.org/wiki/David_Mountbatten,_3rd_Marquess_of_Milford_Haven',
+          label: 'Wikipedia (engelsk)'
+        }
+      ]
     },
     'natalia-ayesha-phillips': {
-      bio: 'Natalia Ayesha Phillips (1959–). Biografi og kilder kommer.',
-      links: []
+      bio:
+        'Yngste datter av Gina Wernher og Harold Phillips, og dermed oldebarnebarn av Pusjkin. Hun møtte Gerald Grosvenor, 6. hertug av Westminster, på en ball på Blenheim Palace i 1977. De giftet seg i 1978 og fikk fire barn. Som hertuginne av Westminster var hun kjent for filantropi, restaureringen av familiesettet Eaton Hall og sitt vingård i Portofino. Hun er guddatter av prins William, og hennes søster Marita Crawley skrev librettoen til operaen The Poet and the Tsar – om deres tipptipptippoldefedre Pusjkin og Nikolaj I. Etter Gerald Grosvenors død i 2016 bærer hun tittelen enkehertuginne.',
+      image: null,
+      links: [{ href: 'https://en.wikipedia.org/wiki/Natalia_Grosvenor,_Duchess_of_Westminster', label: 'Wikipedia (engelsk)' }]
     },
     'george-mountbatten-4': {
-      bio: 'George Mountbatten, 4. Marquess of Milford Haven (1961–). Biografi og kilder kommer.',
-      links: []
+      bio:
+        'Sønn av David og Janet Bryce, og etterkommer av Pusjkin, Romanov-dynastiet, Abram Hannibal og Barbara Grabow. George ble marquess som niåring etter farens død. Han er andremann til kong Charles III og nær den britiske kongefamilien. Som voksen satset han på næringslivet og grunnla i 2000 sammenligningsnettstedet uSwitch, som ble solgt i 2006 for rundt £210 millioner. Han er også en ivrig polospiller. Gift to ganger; hans to barn med første kone Sarah Walker er Lady Tatiana (1990) og Henry, Earl of Medina (1991), den fremtidige 5. marquess.',
+      image: null,
+      links: [
+        {
+          href: 'https://en.wikipedia.org/wiki/George_Mountbatten,_4th_Marquess_of_Milford_Haven',
+          label: 'Wikipedia (engelsk)'
+        }
+      ]
     },
     'hugh-grosvenor-7': {
-      bio: 'Hugh Grosvenor, 7. hertug av Westminster (1991–). Biografi og kilder kommer.',
-      links: []
+      bio:
+        'En av Storbritannias rikeste personer, Hugh arvet hertugtittelen og Grosvenor Estate i 2016 etter farens død – da estimert til £9 milliarder. Grosvenor Estate eier rundt 300 dekar i Londons eksklusive Mayfair og Belgravia. Han er en nær venn av det britiske kongehuset: gudsønn av kong Charles III, gudfar til prins George og prins Archie, og prins William var forlover i hans bryllup. Han giftet seg med Olivia Henson i juni 2024 i Chester Cathedral, og paret fikk sin første datter, Lady Cosima Florence, i juli 2025.',
+      image:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/7th_Duke_of_Westminster.jpg/500px-7th_Duke_of_Westminster.jpg',
+      links: [{ href: 'https://en.wikipedia.org/wiki/Hugh_Grosvenor,_7th_Duke_of_Westminster', label: 'Wikipedia (engelsk)' }]
     },
     'lady-tatiana-mountbatten': {
-      bio: 'Lady Tatiana Mountbatten (1990–). Biografi og kilder kommer.',
+      bio:
+        'Eldste barn av George (4. marquess) og Sarah Walker. Gift med Alexander «Alick» Dru i Winchester Cathedral i 2022. Paret har to barn: Elodie Dru (f. 2023) og Auberon «Albie» Dru (f. 2025).',
+      image: null,
       links: []
     },
     'henry-mountbatten-medina': {
-      bio: 'Henry Mountbatten, Earl of Medina (1991–). Biografi og kilder kommer.',
+      bio:
+        'Yngste barn av George (4. marquess) og Sarah Walker, og arving til Milford Haven-marquessatet. Halvbror til Lady Tatiana. Ingen kjente barn.',
+      image: null,
       links: []
     },
     'lady-cosima-grosvenor': {
-      bio: 'Lady Cosima Grosvenor (2025–). Biografi og kilder kommer.',
+      bio:
+        'Datter av Hugh Grosvenor, 7. hertug av Westminster, og Olivia Henson, født 27. juli 2025. Gjennom sin far er hun Pusjkins timenning, tre ledd fjernet – og etterkommer av Barbara Jochumsdatter Grabow fra Vestlandet.',
+      image: null,
       links: []
     },
     'elodie-dru': {
-      bio: 'Elodie Dru (2023–). Biografi og kilder kommer.',
+      bio:
+        'Barn av Lady Tatiana Mountbatten og Alexander Dru. Gjennom sin mor er hun etterkommer av Pusjkin og Barbara Grabow – AJs timenning, tre ledd fjernet. Har lillebror Auberon («Albie»), født 2025.',
+      image: null,
       links: []
     },
     'auberon-dru': {
-      bio: 'Auberon «Albie» Dru (2025–). Biografi og kilder kommer.',
+      bio:
+        'Barn av Lady Tatiana Mountbatten og Alexander Dru. Gjennom sin mor er han etterkommer av Pusjkin og Barbara Grabow – AJs timenning, tre ledd fjernet. Storesøster Elodie ble født i 2023.',
+      image: null,
       links: []
     }
   };
@@ -1219,6 +1345,17 @@ body.bw-theme ::selection {
     'Tolvmenning',
     'Trettenmenning'
   ];
+
+  /** Sjekk om begge Pusjkin-kolonner har nøyaktig samme person(er) — da slås de sammen til én celle. */
+  function pushkinColumnsIdentical(pair) {
+    var a = pair[0];
+    var b = pair[1];
+    if (!a || !b || a.length !== b.length) return false;
+    for (var i = 0; i < a.length; i++) {
+      if (a[i].key !== b[i].key || a[i].label !== b[i].label) return false;
+    }
+    return true;
+  }
 
   /** Each row: [westminster parts, mountbatten parts] — each part { key, label } */
   var PUSHKIN_PARTS = [
@@ -1378,13 +1515,20 @@ body.bw-theme ::selection {
       tr.appendChild(tdSk);
 
       var pair = PUSHKIN_PARTS[g];
-      var tdH = document.createElement('td');
-      tdH.innerHTML = partsCell(pair[0]);
-      tr.appendChild(tdH);
-
-      var tdM = document.createElement('td');
-      tdM.innerHTML = partsCell(pair[1]);
-      tr.appendChild(tdM);
+      if (pushkinColumnsIdentical(pair)) {
+        var tdMerged = document.createElement('td');
+        tdMerged.colSpan = 2;
+        tdMerged.className = 'pushkin-merged';
+        tdMerged.innerHTML = partsCell(pair[0]);
+        tr.appendChild(tdMerged);
+      } else {
+        var tdH = document.createElement('td');
+        tdH.innerHTML = partsCell(pair[0]);
+        tr.appendChild(tdH);
+        var tdM = document.createElement('td');
+        tdM.innerHTML = partsCell(pair[1]);
+        tr.appendChild(tdM);
+      }
 
       tbody.appendChild(tr);
     }
@@ -1405,7 +1549,12 @@ body.bw-theme ::selection {
       };
       titleEl.textContent = data.title || label;
       if (data.image) {
-        imgEl.innerHTML = '<img src="' + escapeAttr(data.image) + '" alt="">';
+        imgEl.innerHTML =
+          '<img src="' +
+          escapeAttr(data.image) +
+          '" alt="' +
+          escapeAttr(data.title || label) +
+          '" loading="lazy" decoding="async" referrerpolicy="no-referrer-when-downgrade">';
       } else {
         imgEl.innerHTML = PLACEHOLDER_SVG;
       }
