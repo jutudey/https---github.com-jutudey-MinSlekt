@@ -939,6 +939,9 @@ body.bw-theme ::selection {
   vertical-align: top;
   text-align: left;
 }
+.pushkin-table td.pushkin-merged {
+  text-align: center;
+}
 .pushkin-table tbody tr:hover td {
   background: rgba(107, 31, 42, 0.04);
 }
@@ -1006,11 +1009,11 @@ body.bw-theme ::selection {
 }
 .pushkin-modal-card {
   position: relative;
-  max-width: 36rem;
+  max-width: min(52rem, calc(100vw - 2rem));
   width: 100%;
   max-height: calc(100vh - 3rem);
   overflow-y: auto;
-  padding: 1.75rem 1.85rem 1.5rem;
+  padding: 2.75rem 1.75rem 1.5rem 1.75rem;
   border: 1px solid var(--bw-letter-edge);
   border-radius: 2px;
   background: var(--bw-letter-bg);
@@ -1018,6 +1021,15 @@ body.bw-theme ::selection {
     0 8px 28px -12px rgba(40, 30, 18, 0.35),
     0 24px 50px -24px rgba(40, 30, 18, 0.25);
   font-family: var(--bw-font-body);
+}
+.pushkin-modal-layout {
+  display: grid;
+  grid-template-columns: minmax(200px, 32%) minmax(0, 1fr);
+  gap: 1.5rem 2rem;
+  align-items: start;
+}
+.pushkin-modal-body {
+  min-width: 0;
 }
 .pushkin-modal-close {
   position: absolute;
@@ -1032,24 +1044,30 @@ body.bw-theme ::selection {
   font-size: 1.25rem;
   line-height: 1;
   cursor: pointer;
+  z-index: 2;
 }
 .pushkin-modal-close:hover {
   border-color: var(--bw-accent);
   color: var(--bw-accent);
 }
-.pushkin-modal-card h2 {
-  margin: 0 2.5rem 1rem 0;
+.pushkin-modal-body h2 {
+  margin: 0 2.75rem 0.85rem 0;
   font-family: var(--bw-font-display);
   font-size: 1.45rem;
   font-weight: 600;
   color: var(--bw-ink);
+  line-height: 1.2;
 }
 .pushkin-modal-img-wrap {
-  margin: 0 0 1rem;
+  margin: 0;
   text-align: center;
+  position: sticky;
+  top: 0.25rem;
 }
 .pushkin-modal-img-wrap img,
 .pushkin-modal-img-wrap svg {
+  display: block;
+  width: 100%;
   max-width: 100%;
   height: auto;
   border: 1px solid var(--bw-rule);
@@ -1062,9 +1080,6 @@ body.bw-theme ::selection {
   line-height: 1.55;
   white-space: pre-line;
 }
-.pushkin-table td.pushkin-merged {
-  text-align: center;
-}
 .pushkin-modal-links {
   margin: 0;
   padding-left: 1.2em;
@@ -1072,6 +1087,23 @@ body.bw-theme ::selection {
 }
 .pushkin-modal-links li { margin: 0.35em 0; }
 .pushkin-modal-links a { color: var(--bw-accent); }
+
+@media (max-width: 720px) {
+  .pushkin-modal-card {
+    max-width: calc(100vw - 1.5rem);
+    padding: 2.6rem 1.15rem 1.25rem;
+  }
+  .pushkin-modal-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .pushkin-modal-img-wrap {
+    position: static;
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
 @media print {
   .pushkin-selectors,
@@ -1149,10 +1181,14 @@ body.bw-theme ::selection {
   <div id="pushkin-modal" class="pushkin-modal-root" hidden role="dialog" aria-modal="true" aria-labelledby="pushkin-modal-title">
     <div class="pushkin-modal-card" role="document">
       <button type="button" class="pushkin-modal-close" id="pushkin-modal-close" aria-label="Lukk">&times;</button>
-      <h2 id="pushkin-modal-title"></h2>
-      <div class="pushkin-modal-img-wrap" id="pushkin-modal-img"></div>
-      <p class="pushkin-modal-bio" id="pushkin-modal-bio"></p>
-      <ul class="pushkin-modal-links" id="pushkin-modal-links"></ul>
+      <div class="pushkin-modal-layout">
+        <div class="pushkin-modal-img-wrap" id="pushkin-modal-img"></div>
+        <div class="pushkin-modal-body">
+          <h2 id="pushkin-modal-title"></h2>
+          <p class="pushkin-modal-bio" id="pushkin-modal-bio"></p>
+          <ul class="pushkin-modal-links" id="pushkin-modal-links"></ul>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1233,7 +1269,8 @@ body.bw-theme ::selection {
     'nada-de-torby': {
       bio:
         'Yngre søster av Zia, og den personen gjennom hvem Mountbatten-linjen skiller seg fra Westminster-linjen. Født i Cannes og oppvokst i eksil i England etter foreldrenes utvisning fra Russland. Nada giftet seg i 1916 med prins George of Battenberg (senere 2. marquess av Milford Haven) – en forbindelse som plasserte henne i kjernen av det britiske aristokratiet. Sammen med mannen bidro hun til å oppdra nevøen prins Philip i perioder på 1930-tallet. Nada var kjent for sin uavhengige og dristige personlighet, og hun reiste ofte på ville eventyr med sin svigerinne Edwina Mountbatten. Under den berømte Gloria Vanderbilt-saken i 1934 ble hun anklaget for en lesbisk affære med Gloria Morgan Vanderbilt – noe hun alltid benektet offentlig, men som hennes barnebarn bekreftet i 2022. Hun døde i Cannes i 1963.',
-      image: null,
+      image:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Nadejda_Mountbatten%2C_Marchioness_of_Milford_Haven_%28LOC_ggbain.16855%29.jpg/500px-Nadejda_Mountbatten%2C_Marchioness_of_Milford_Haven_%28LOC_ggbain.16855%29.jpg',
       links: [
         {
           href: 'https://en.wikipedia.org/wiki/Nadejda_Mountbatten,_Marchioness_of_Milford_Haven',
@@ -1244,13 +1281,13 @@ body.bw-theme ::selection {
     'gina-wernher': {
       bio:
         'Datter av Zia og Harold Wernher, og barndomsvenninne av dronning Elizabeth II og prins Philip – et vennskap hun arvet direkte fra sin mor. Gina giftet seg med oberst Harold Phillips og fikk fem barn, blant dem Natalia (den yngste) og Alexandra, som ble hertuginne av Abercorn. Familien var dypt forankret i britisk kongelig og aristokratisk liv, med Luton Hoo som familiesete. Ginas søster Nada var gift med 2. marquess av Milford Haven, onkel til prins Philip. Det var Ginas entusiastiske bifallelse som ifølge familietradisjonen bidro til at Natalias møte med Gerald Grosvenor ble til noe: «Slipp ham ikke!»',
-      image: null,
+      image: 'assets/gina-wernher-wedding.png',
       links: []
     },
     'david-mountbatten-3': {
       bio:
         'Sønn av George (2. marquess av Milford Haven) og Nada de Torby; arvet tittelen som 9-åring etter farens tidlige død i 1938. David giftet seg to ganger – først med Romaine Pierce (ingen barn), deretter med Janet Mercedes Bryce, med hvem han fikk sønnene George (4. marquess) og Ivar Mountbatten. Han døde i London i 1970, 51 år gammel. Som sin far delte han en tidlig bortgang, og etterlot seg en ung arving på kun ni år.',
-      image: null,
+      image: 'https://upload.wikimedia.org/wikipedia/commons/7/78/Marquess_of_Milford_Haven.jpg',
       links: [
         {
           href: 'https://en.wikipedia.org/wiki/David_Mountbatten,_3rd_Marquess_of_Milford_Haven',
@@ -1266,8 +1303,10 @@ body.bw-theme ::selection {
     },
     'george-mountbatten-4': {
       bio:
+        'Illustrasjon: historisk Battenberg-/Mountbatten-foto (ikke personlig portrett av George som 4. marquess).\n\n' +
         'Sønn av David og Janet Bryce, og etterkommer av Pusjkin, Romanov-dynastiet, Abram Hannibal og Barbara Grabow. George ble marquess som niåring etter farens død. Han er andremann til kong Charles III og nær den britiske kongefamilien. Som voksen satset han på næringslivet og grunnla i 2000 sammenligningsnettstedet uSwitch, som ble solgt i 2006 for rundt £210 millioner. Han er også en ivrig polospiller. Gift to ganger; hans to barn med første kone Sarah Walker er Lady Tatiana (1990) og Henry, Earl of Medina (1991), den fremtidige 5. marquess.',
-      image: null,
+      image:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Mountbatten_familia.jpg/500px-Mountbatten_familia.jpg',
       links: [
         {
           href: 'https://en.wikipedia.org/wiki/George_Mountbatten,_4th_Marquess_of_Milford_Haven',
@@ -1284,14 +1323,18 @@ body.bw-theme ::selection {
     },
     'lady-tatiana-mountbatten': {
       bio:
+        'Illustrasjon: gjester ved prinsesse Beatrices bryllup i Windsor (2020); stemningsbilde fra britisk kongelig hoff.\n\n' +
         'Eldste barn av George (4. marquess) og Sarah Walker. Gift med Alexander «Alick» Dru i Winchester Cathedral i 2022. Paret har to barn: Elodie Dru (f. 2023) og Auberon «Albie» Dru (f. 2025).',
-      image: null,
+      image:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Guests_at_Princess_Beatrice%27s_wedding.jpg/500px-Guests_at_Princess_Beatrice%27s_wedding.jpg',
       links: []
     },
     'henry-mountbatten-medina': {
       bio:
+        'Illustrasjon: British Polo Day, Marokko (2014); stemningsbilde — Henry omtales som ivrig polospiller.\n\n' +
         'Yngste barn av George (4. marquess) og Sarah Walker, og arving til Milford Haven-marquessatet. Halvbror til Lady Tatiana. Ingen kjente barn.',
-      image: null,
+      image:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/British_Polo_Day_Morocco_%2813965028434%29.jpg/500px-British_Polo_Day_Morocco_%2813965028434%29.jpg',
       links: []
     },
     'lady-cosima-grosvenor': {
