@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pusjkin og vår slekt — slektstavle</title>
+  <title>Pusjkin og sammenhengen med vår del av Galtung-slekten</title>
   <style>
 /* =============================================================================
    BioWeaver standalone theme
@@ -907,6 +907,31 @@ body.bw-theme ::selection {
   border-radius: 2px;
   background: rgba(255, 255, 255, 0.35);
 }
+
+.pushkin-interesting {
+  margin: 0 0 2.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--bw-rule);
+}
+.pushkin-interesting-title {
+  margin: 0 0 1rem;
+  font-family: var(--bw-font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--bw-accent);
+  line-height: 1.25;
+}
+.pushkin-interesting-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.pushkin-interesting-list li {
+  margin: 0.35em 0;
+}
+.pushkin-interesting-list .pushkin-name-btn {
+  display: inline;
+}
 .pushkin-table-caption {
   caption-side: top;
   padding: 0 0 0.75rem;
@@ -1133,9 +1158,7 @@ body.bw-theme ::selection {
       </figure>
       <div class="pushkin-intro-text">
         <p class="bw-dropcap">
-          Denne siden viser slektskapet mellom vår familielinje fra <strong>Barbara Jochumsdatter Grabow (1631–1695)</strong>
-          og to linjer ned fra <strong>Aleksander Pusjkin</strong> — én mot Westminster (Grosvenor) og én mot Mountbatten (Milford Haven).
-          Pusjkin-linjene er like fra slektsledd 0–8 (Barbara til og med grevinne Sophie von Merenberg); fra slektsledd 9 skiller de seg mellom søstrene Zia og Nada de Torby.
+          Denne siden viser slektskapet mellom vår familie fra <strong>Barbara Jochumsdatter Grabow (1631–1695)</strong> og ned til den store russiske forfatteren <strong>Aleksander Pusjkin</strong>. Det viser seg også at Pushkin's etterfølgere også har en interessant historie som leder dem rett inn i den europeiske adelen. Linkene på siden under gir litt mer informasjon om hver av dem.
         </p>
       </div>
       <aside class="bw-infobox">
@@ -1178,6 +1201,28 @@ body.bw-theme ::selection {
         <tbody id="slekt-tbody"></tbody>
       </table>
     </div>
+
+    <section class="pushkin-interesting" aria-labelledby="pushkin-interesting-heading">
+      <h2 class="pushkin-interesting-title" id="pushkin-interesting-heading">Andre Interessante personer</h2>
+      <ul class="pushkin-interesting-list">
+        <li>
+          <button
+            type="button"
+            class="pushkin-name-btn pushkin-open-modal"
+            data-person-key="abram-petrovitsj-hannibal"
+            data-person-label="Abram Petrovitsj Hannibal (ca 1696–1781)"
+          >Abram Petrovitsj Hannibal</button> - Peter den Store sin gudsønn var gift med Christina Regina Siöberg
+        </li>
+        <li>
+          <button
+            type="button"
+            class="pushkin-name-btn pushkin-open-modal"
+            data-person-key="george-mountbatten-2"
+            data-person-label="George Mountbatten, 2. Marquess of Milford Haven (1892–1938)"
+          >George Mountbatten, 2. Marquess of Milford Haven</button>
+        </li>
+      </ul>
+    </section>
   </main>
 
   <div id="pushkin-modal" class="pushkin-modal-root" hidden role="dialog" aria-modal="true" aria-labelledby="pushkin-modal-title">
@@ -1203,27 +1248,58 @@ body.bw-theme ::selection {
     'barbara-grabow': {
       bio:
         'Barbara ble født i Danmark i 1631 som datter av den tyske adelsmannen Jochum Grabow og danske Maren Hansdatter Steensen. Slekten von Grabow tilhørte den tyske uradelen fra Brandenburg. Hun ble dobbelt foreldreløs i ung alder – faren døde da hun var tre, moren da hun var 14 – og bodde deretter hos ulike slektninger, til slutt hos farens fetter, admiral Kjøn Joachim Grabow. I 1650 giftet hun seg med den norske godseieren Lauritz Galtung Torsnes og bosatte seg på Vestlandet. Etter Lauritz\' død i 1661 satt hun igjen som 30-åring med seks barn, og levde til 1695.',
-      image: null,
+      image: 'assets/barbara-jochumsdatter-grabow-portrait.png',
       links: []
     },
     'clara-maria-galtung-torsnes': {
       bio:
-        'Eldste datter av Lauritz Galtung Torsnes og Barbara Grabow, og den personen gjennom hvem Westminster-linjen skiller seg fra AJs norske linje. Hun giftet seg med den svenske godseieren Gustaf Siöberg til Esarp og fikk fem barn. Kildematerialet om hennes eget liv er sparsomt, men hennes eldste sønn Mattias Johan ble et viktig bindeledd mellom Skandinavia og Russland.',
-      image: null,
-      links: []
+        'Clara Maria Lauritsdatter Galtung (født ca. 1651 i Bjørnstrup i Skåne, død 1699) var eldste datter av Lauritz Galtung Torsnes og Barbara Grabow. Hun giftet seg med den svenske godseieren Gustaf Siöberg til Esarp og fikk fem barn. Kildematerialet om hennes eget liv er sparsomt, men hennes eldste sønn Matthias Johann von Sjöberg ble et viktig bindeledd mellom Skandinavia og Russland.',
+      image: 'assets/clara-maria-lauritsdatter-vapen.png',
+      links: [
+        {
+          href: 'https://www.geni.com/people/Clara-Maria-Galtung/6000000007909833684?through=6000000001504296318',
+          label: 'Geni (profil)'
+        }
+      ]
     },
     'mattias-johan-sioberg': {
       bio:
-        'Eldste sønn av Clara Maria Galtung og Gustaf Siöberg. Han dro i 1699 til Polen og deretter til Riga i Latvia – som på den tid var under svensk styre – der han giftet seg med Christina Elisabeth d\'Albedyll fra en latvisk adelsfamilie. De fikk fire kjente barn, blant dem datteren Christina Regina, som skulle gifte seg med en av 1700-tallets mest usedvanlige skikkelser.',
-      image: null,
-      links: []
+        'Matthias Johann von Sjöberg — i svenske slektskapstavler ofte Mattias Johan Gustafsson Siöberg — (født ca. 1680–1681, død 1742 i Estland) var eldste sønn av Clara Maria Lauritsdatter Galtung og Gustaf Siöberg. Han dro i 1699 til Polen og deretter til Riga i Latvia (da under svensk styre), der han giftet seg med Christina Elisabeth d\'Albedyll fra en latvisk adelsfamilie. De fikk fire kjente barn, blant dem datteren Christina Regina, som skulle gifte seg med en av 1700-tallets mest usedvanlige skikkelser.',
+      image: 'assets/mattias-johan-sioberg-vapen.png',
+      links: [
+        {
+          href: 'https://www.geni.com/people/Matthias-Johann-von-Sj%C3%B6berg/6000000007909942353?through=6000000007909833684',
+          label: 'Geni (profil)'
+        }
+      ]
     },
     'christina-regina-sioberg': {
       bio:
-        'Datter av Mattias Johan Siöberg og Christina Elisabeth d\'Albedyll, født i Riga i 1705. Hun giftet seg med Abram Petrovitsj Hannibal – Peter den stores afrikanske gudsønn og general – og ble slik bindeleddet mellom den skandinavisk-baltiske Siöberg-slekten og det russiske hoffet. Ekteskapet var Hannibals andre, etter at hans første tvangsekteskap ble annullert. Sammen fikk de elleve barn.\n\n' +
+        'Datter av Matthias Johann von Sjöberg og Christina Elisabeth d\'Albedyll, født i Riga i 1705. Hun giftet seg med Abram Petrovitsj Hannibal – Peter den stores afrikanske gudsønn og general – og ble slik bindeleddet mellom den skandinavisk-baltiske Siöberg-slekten og det russiske hoffet. Ekteskapet var Hannibals andre, etter at hans første tvangsekteskap ble annullert. Sammen fikk de elleve barn.\n\n' +
         'Abram (ca. 1696–1781) ble født i Afrika, kidnappet som barn og sendt til tsar Peter; han ble fri mann, utdannet i Frankrike som militæringeniør og nådde generalrang i Russland. Pusjkin var stolt av den afrikanske arven og portretterte ham i den ufullendte romanen Peters den stores morian.',
       image: null,
       links: [{ href: 'https://en.wikipedia.org/wiki/Abram_Petrovich_Gannibal', label: 'Abram Petrovitsj Hannibal (Wikipedia)' }]
+    },
+    'abram-petrovitsj-hannibal': {
+      bio:
+        'Abram Petrovitsj Hannibal (ca. 1696–1781) — født i Afrika, kidnappet som barn, solgt til den osmanske sultanen og senere sendt som gave til tsar Peter den store i Russland. Peter fridde ham fra slaveriet, tok ham som gudsønn og lot ham utdanne seg i Frankrike som militæringeniør, der han blant annet omgikkes Montesquieu og Voltaire. Tilbake i Russland steg han til general-in-chiefs rang under Katarina den store. Han valgte selv slektsnavnet Hannibal som hyllest til den kartagiske feltherren. I 1736 giftet han seg med Christina Regina Siöberg i Tallinn (Reval); ekteskapet var hans andre, etter et annullert tvangsekteskap. Han døde 20. april 1781 i St. Petersburg. Gjennom sønnen Osip er han stamfar til Aleksander Pusjkin. Pusjkin var stolt av den afrikanske arven og skildret ham i romanutkastet Peters den stores morian.',
+      image: 'assets/abram-petrovitsj-hannibal-portrait.png',
+      links: [
+        { href: 'https://en.wikipedia.org/wiki/Abram_Petrovich_Gannibal', label: 'Wikipedia (engelsk)' }
+      ]
+    },
+    'george-mountbatten-2': {
+      bio:
+        'Født prins George of Battenberg i Darmstadt i 1892, eldre sønn av admiral prins Louis av Battenberg og prinsesse Victoria av Hessen. Søsknene hans var prinsesse Alice (mor til prins Philip), dronning Louise av Sverige, og lord Louis Mountbatten, 1. jarl av Burma. Under første verdenskrig ga familien opp sine tyske titler på kong Georgs anmodning og tok etternavnet Mountbatten. George tjenestegjorde i Royal Navy og steg til kaptein – og ble rosende omtalt som en matematisk begavelse som kunne løse kompliserte artilleriproblemer i hodet og leste kalkulusbøker avslappet på toget. Dronning Elizabeth II sa om ham: «Han var et av de mest intelligente og geniale mennesker.»\n\n' +
+        'Fra 1930 tok han seg av nevøen prins Philip, som vokste opp hos dem på Lynden Manor i Berkshire – en rolle som etter Georges tidlige død ble overtatt av broren lord Louis. Han døde av beinmargskreft i 1938, bare 45 år gammel.\n\n' +
+        'Han etterlot en stor samling erotisk kunst til British Library, katalogisert som «prospekter og kataloger over erotiske og obskøne bøker, bilder og instrumenter, datert fra 1889 til 1929. 81 deler.» Det var sønnen David (3. marquess) som fysisk overleverte samlingen på 1960-tallet – muligens for å unngå at den dukket opp under politiets etterforskning i forbindelse med Profumo-skandalen.',
+      image: 'assets/george-mountbatten-2nd-marquess-portrait.png',
+      links: [
+        {
+          href: 'https://en.wikipedia.org/wiki/George_Mountbatten,_2nd_Marquess_of_Milford_Haven',
+          label: 'Wikipedia (engelsk)'
+        }
+      ]
     },
     'osip-abramovitsj-hannibal': {
       bio:
@@ -1350,13 +1426,13 @@ body.bw-theme ::selection {
     },
     'elodie-dru': {
       bio:
-        'Barn av Lady Tatiana Mountbatten og Alexander Dru. Gjennom sin mor er hun etterkommer av Pusjkin og Barbara Grabow – AJs timenning, tre ledd fjernet. Har lillebror Auberon («Albie»), født 2025.',
+        'Barn av Lady Tatiana Mountbatten og Alexander Dru. Gjennom sin mor er hun etterkommer av Pusjkin og Barbara Grabow – i tabellen tilsvarer slektskapsgraden timenning med tre ledd fjernet mot Pusjkin-linjene. Har lillebror Auberon («Albie»), født 2025.',
       image: null,
       links: []
     },
     'auberon-dru': {
       bio:
-        'Barn av Lady Tatiana Mountbatten og Alexander Dru. Gjennom sin mor er han etterkommer av Pusjkin og Barbara Grabow – AJs timenning, tre ledd fjernet. Storesøster Elodie ble født i 2023.',
+        'Barn av Lady Tatiana Mountbatten og Alexander Dru. Gjennom sin mor er han etterkommer av Pusjkin og Barbara Grabow – i tabellen tilsvarer slektskapsgraden timenning med tre ledd fjernet mot Pusjkin-linjene. Storesøster Elodie ble født i 2023.',
       image: null,
       links: []
     }
@@ -1412,16 +1488,16 @@ body.bw-theme ::selection {
       [{ key: 'barbara-grabow', label: 'Barbara Jochumsdatter Grabow (1631–1695)' }]
     ],
     [
-      [{ key: 'clara-maria-galtung-torsnes', label: 'Clara Maria Galtung Torsnes' }],
-      [{ key: 'clara-maria-galtung-torsnes', label: 'Clara Maria Galtung Torsnes' }]
+      [{ key: 'clara-maria-galtung-torsnes', label: 'Clara Maria Lauritsdatter Galtung (ca 1651–1699)' }],
+      [{ key: 'clara-maria-galtung-torsnes', label: 'Clara Maria Lauritsdatter Galtung (ca 1651–1699)' }]
     ],
     [
-      [{ key: 'mattias-johan-sioberg', label: 'Mattias Johan Siöberg' }],
-      [{ key: 'mattias-johan-sioberg', label: 'Mattias Johan Siöberg' }]
+      [{ key: 'mattias-johan-sioberg', label: 'Matthias Johann von Sjöberg (ca 1681–1742)' }],
+      [{ key: 'mattias-johan-sioberg', label: 'Matthias Johann von Sjöberg (ca 1681–1742)' }]
     ],
     [
-      [{ key: 'christina-regina-sioberg', label: 'Christina Regina Siöberg (1705–)' }],
-      [{ key: 'christina-regina-sioberg', label: 'Christina Regina Siöberg (1705–)' }]
+      [{ key: 'christina-regina-sioberg', label: 'Christina Regina Siöberg (1717–1781)' }],
+      [{ key: 'christina-regina-sioberg', label: 'Christina Regina Siöberg (1717–1781)' }]
     ],
     [
       [{ key: 'osip-abramovitsj-hannibal', label: 'Osip Abramovitsj Hannibal' }],
@@ -1477,7 +1553,7 @@ body.bw-theme ::selection {
       persons: [
         {
           id: 'arne-johan',
-          label: 'Arne Johan Eriksen (1972–)',
+          label: 'Eldste barn i Anna-grenen (1972–)',
           gen11: 'Niklas Johan Eriksen (2007–) · Alexander Jonas Eriksen (2011–)'
         },
         {
@@ -1609,22 +1685,17 @@ body.bw-theme ::selection {
       bioEl.textContent = data.bio;
       linksEl.innerHTML = '';
       var links = data.links || [];
-      if (links.length === 0) {
-        var li = document.createElement('li');
-        li.textContent = '(Lenker kan legges til senere.)';
-        linksEl.appendChild(li);
-      } else {
-        for (var i = 0; i < links.length; i++) {
-          var item = links[i];
-          var li2 = document.createElement('li');
-          var a = document.createElement('a');
-          a.href = item.href;
-          a.target = '_blank';
-          a.rel = 'noopener noreferrer';
-          a.textContent = item.label;
-          li2.appendChild(a);
-          linksEl.appendChild(li2);
-        }
+      linksEl.hidden = links.length === 0;
+      for (var i = 0; i < links.length; i++) {
+        var item = links[i];
+        var li2 = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = item.href;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.textContent = item.label;
+        li2.appendChild(a);
+        linksEl.appendChild(li2);
       }
       modal.hidden = false;
       document.body.style.overflow = 'hidden';
@@ -1636,14 +1707,18 @@ body.bw-theme ::selection {
       document.body.style.overflow = '';
     }
 
-    document.getElementById('slekt-tbody').addEventListener('click', function (e) {
-      var t = e.target;
-      if (t && t.classList && t.classList.contains('pushkin-open-modal')) {
-        var key = t.getAttribute('data-person-key');
-        var label = t.getAttribute('data-person-label') || '';
+    var mainEl = document.querySelector('.pushkin-main');
+    if (mainEl) {
+      mainEl.addEventListener('click', function (e) {
+        var t = e.target;
+        if (!t || !t.closest) return;
+        var btn = t.closest('.pushkin-open-modal');
+        if (!btn) return;
+        var key = btn.getAttribute('data-person-key');
+        var label = btn.getAttribute('data-person-label') || '';
         if (key) openModal(key, label);
-      }
-    });
+      });
+    }
 
     closeBtn.addEventListener('click', closeModal);
     modal.addEventListener('click', function (e) {

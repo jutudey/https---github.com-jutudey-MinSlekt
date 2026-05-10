@@ -10,21 +10,21 @@ Barbara ble født i Danmark i 1631 som datter av den tyske adelsmannen Jochum Gr
 
 ---
 
-### Clara Maria Galtung Torsnes (ca. 1651-?)
+### Clara Maria Lauritsdatter Galtung (ca. 1651–1699)
 
-Eldste datter av Lauritz Galtung Torsnes og Barbara Grabow, og den personen gjennom hvem Westminster-linjen skiller seg fra AJs norske linje. Hun giftet seg med den svenske godseieren Gustaf Siöberg til Esarp og fikk fem barn. Kildematerialet om hennes eget liv er sparsomt, men hennes eldste sønn Mattias Johan ble et viktig bindeledd mellom Skandinavia og Russland.
+Clara Maria Lauritsdatter Galtung (født ca. 1651 i Bjørnstrup i Skåne, død 1699) var eldste datter av Lauritz Galtung Torsnes og Barbara Grabow, og den personen gjennom hvem Westminster-linjen skiller seg fra den norske slektslinjen som følges i kolonnen «Vår linje» i denne tabellen. Hun giftet seg med den svenske godseieren Gustaf Siöberg til Esarp og fikk fem barn. Kildematerialet om hennes eget liv er sparsomt, men hennes eldste sønn Matthias Johann von Sjöberg ble et viktig bindeledd mellom Skandinavia og Russland.
 
 ---
 
-### Mattias Johan Siöberg (ca. 1675-?)
+### Matthias Johann von Sjöberg (ca. 1681–1742)
 
-Eldste sønn av Clara Maria Galtung og Gustaf Siöberg. Han dro i 1699 til Polen og deretter til Riga i Latvia - som på den tid var under svensk styre - der han giftet seg med Christina Elisabeth d'Albedyll fra en latvisk adelsfamilie. De fikk fire kjente barn, blant dem datteren Christina Regina, som skulle gifte seg med en av 1700-tallets mest usedvanlige skikkelser.
+Matthias Johann von Sjöberg — i svenske slektskapstavler ofte Mattias Johan Gustafsson Siöberg — (født ca. 1680–1681, død 1742 i Estland) var eldste sønn av Clara Maria Lauritsdatter Galtung og Gustaf Siöberg. Han dro i 1699 til Polen og deretter til Riga i Latvia - som på den tid var under svensk styre - der han giftet seg med Christina Elisabeth d'Albedyll fra en latvisk adelsfamilie. De fikk fire kjente barn, blant dem datteren Christina Regina, som skulle gifte seg med en av 1700-tallets mest usedvanlige skikkelser.
 
 ---
 
 ### Christina Regina Siöberg (1705-?)
 
-Datter av Mattias Johan Siöberg og Christina Elisabeth d'Albedyll, født i Riga i 1705. Hun giftet seg med Abram Petrovitsj Hannibal - Peter den stores afrikanske gudsønn og general - og ble slik bindeleddet mellom den skandinavisk-baltiske Siöberg-slekten og det russiske hoffet. Ekteskapet var Hannibals andre, etter at hans første tvangsekteskap ble annullert. Sammen fikk de elleve barn.
+Datter av Matthias Johann von Sjöberg og Christina Elisabeth d'Albedyll, født i Riga i 1705. Hun giftet seg med Abram Petrovitsj Hannibal - Peter den stores afrikanske gudsønn og general - og ble slik bindeleddet mellom den skandinavisk-baltiske Siöberg-slekten og det russiske hoffet. Ekteskapet var Hannibals andre, etter at hans første tvangsekteskap ble annullert. Sammen fikk de elleve barn.
 
 ---
 

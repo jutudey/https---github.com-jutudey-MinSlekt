@@ -13,12 +13,12 @@ Dobbelt foreldreløs i ung alder, giftet seg 1650 med Lauritz Galtung Torsnes p�
 
 ---
 
-### Clara Maria Galtung Torsnes (ca. 1651-?)
-Eldste datter av Barbara og Lauritz. Giftet seg med den svenske godseieren Gustaf Siöberg til Esarp. Hennes sønn Mattias Johan tok veien til Riga og videre inn i russisk historie.
+### Clara Maria Lauritsdatter Galtung (ca. 1651–1699)
+Clara Maria Lauritsdatter Galtung (født ca. 1651 i Bjørnstrup i Skåne, død 1699): eldste datter av Barbara og Lauritz. Giftet seg med den svenske godseieren Gustaf Siöberg til Esarp. Hennes sønn Matthias Johann von Sjöberg tok veien til Riga og videre inn i russisk historie.
 
 ---
 
-### Mattias Johan Siöberg (ca. 1675-?)
+### Matthias Johann von Sjöberg (ca. 1681–1742)
 Dro til Riga (da under svensk styre), giftet seg med Christina Elisabeth d'Albedyll. Faren til Christina Regina, som ble bindeleddet til Abram Hannibal.
 
 ---
@@ -118,4 +118,4 @@ Yngste barn av George (4. marquess) og Sarah Walker, og arving til Milford Haven
 
 ### Elodie Dru (2023-) og Auberon "Albie" Dru (2025-)
 
-Barn av Lady Tatiana Mountbatten og Alexander Dru. Gjennom sin mor er de etterkommere av Pusjkin og Barbara Grabow - AJs timenning, 3 ledd fjernet.
+Barn av Lady Tatiana Mountbatten og Alexander Dru. Gjennom sin mor er de etterkommere av Pusjkin og Barbara Grabow – i tabellen tilsvarer slektskapsgraden timenning med tre ledd fjernet mot Pusjkin-linjene.
